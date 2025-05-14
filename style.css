@@ -22,9 +22,18 @@ body {
     letter-spacing: 2px;
 }
 
+.city-group-header {
+    font-size: 1.8em;
+    margin-top: 40px; /* Add some space above city headers */
+    margin-bottom: 20px;
+    text-align: left; /* Align city names to the left */
+    border-bottom: 1px solid #555; /* Subtle separator */
+    padding-bottom: 10px;
+}
+
 .map-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive grid */
     gap: 10px;
     margin-bottom: 40px;
     padding: 10px;
@@ -32,11 +41,14 @@ body {
 }
 
 .map-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Ensure the whole path is visible */
+    width: 100%; /* Allow it to fill smaller cells up to its max-width */
+    max-width: 150px; /* Cap its maximum width */
+    height: 150px; /* Set a fixed height or max-height */
+    object-fit: contain; /* Scales the image to fit within the content box while maintaining aspect ratio */
     background-color: black; /* Ensure transparent PNGs have black background if needed */
     border: 1px solid #222; /* Subtle border for each map */
+    margin-left: auto; /* Center the image in the grid cell if it's smaller than the cell */
+    margin-right: auto; /* Center the image in the grid cell if it's smaller than the cell */
 }
 
 .stats-section {
@@ -94,6 +106,9 @@ footer p {
     .main-header h1 {
         font-size: 2.5em;
     }
+    .city-group-header {
+        font-size: 1.5em;
+    }
     .stats-section {
         flex-direction: column;
         align-items: center;
@@ -120,9 +135,16 @@ footer p {
     .main-header h1 {
         font-size: 2em;
     }
+    .city-group-header {
+        font-size: 1.3em;
+    }
     .map-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjusted minmax for smaller screens */
         gap: 5px;
+    }
+    .map-grid img {
+        max-width: 100px; /* Further reduce max image size on very small screens */
+        height: 100px;
     }
 }
 
