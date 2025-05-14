@@ -5,86 +5,408 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johan's Running Journey</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .marathon-majors-section {
+            margin-top: 30px; /* Add some space above the new section */
+            padding-top: 20px;
+            border-top: 1px solid #eee; /* Optional: visual separator */
+        }
+        .marathon-majors-section h2 {
+            text-align: center; /* Center the section title */
+            margin-bottom: 20px;
+        }
+        .marathon-gallery {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            justify-content: space-around; /* Distribute space around items */
+            align-items: flex-start; /* Align items to the top */
+            padding: 10px 0;
+        }
+        .marathon-item {
+            text-align: center;
+            margin: 10px; /* Spacing around each item */
+            width: 120px; /* Fixed width for each marathon item container */
+        }
+        .marathon-item a {
+            text-decoration: none;
+            color: inherit; /* Inherit text color, so captions are not blue by default */
+            display: block; /* Make the whole item clickable and allows margin/padding */
+        }
+        .marathon-item img {
+            width: 100%; /* Image takes full width of its container (120px) */
+            height: 100px; /* Fixed height for images to ensure similarity */
+            object-fit: contain; /* Scales the image to fit within the given dimension while maintaining aspect ratio. */
+            border: 1px solid #ddd; /* Light border around images */
+            border-radius: 4px; /* Rounded corners for images */
+            margin-bottom: 8px; /* Space between image and caption */
+            background-color: white; /* Ensure original background or a neutral one for transparent images */
+        }
+        .marathon-item p {
+            margin-top: 0;
+            font-size: 0.9em;
+            color: #fffdfd;
+            line-height: 1.2;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header class="main-header">
+            <h1>Johan's Running Page</h1>
         </header>
-
-        <div class="map-grid">
-            <!-- Images will be populated here by a script or manually listed -->
-            <img src="map_images/12767439580.png" alt="Run map">
-            <img src="map_images/12784710701.png" alt="Run map">
-            <img src="map_images/12854175932.png" alt="Run map">
-            <img src="map_images/12920079311.png" alt="Run map">
-            <img src="map_images/13213854968.png" alt="Run map">
-            <img src="map_images/13291388295.png" alt="Run map">
-            <img src="map_images/13332766373.png" alt="Run map">
-            <img src="map_images/13430160110.png" alt="Run map">
-            <img src="map_images/13454439320.png" alt="Run map">
-            <img src="map_images/13493784519.png" alt="Run map">
-            <img src="map_images/13507865322.png" alt="Run map">
-            <img src="map_images/13516447588.png" alt="Run map">
-            <img src="map_images/13544161180.png" alt="Run map">
-            <img src="map_images/13557315646.png" alt="Run map">
-            <img src="map_images/13561240854.png" alt="Run map">
-            <img src="map_images/13570874015.png" alt="Run map">
-            <img src="map_images/13579036041.png" alt="Run map">
-            <img src="map_images/13605831832.png" alt="Run map">
-            <img src="map_images/13617481078.png" alt="Run map">
-            <img src="map_images/13631316781.png" alt="Run map">
-            <img src="map_images/13639556141.png" alt="Run map">
-            <img src="map_images/13676356902.png" alt="Run map">
-            <img src="map_images/13693388737.png" alt="Run map">
-            <img src="map_images/13724666860.png" alt="Run map">
-            <img src="map_images/13756997815.png" alt="Run map">
-            <img src="map_images/13807158635.png" alt="Run map">
-            <img src="map_images/13820292791.png" alt="Run map">
-            <img src="map_images/13829892213.png" alt="Run map">
-            <img src="map_images/13886612117.png" alt="Run map">
-            <img src="map_images/13895413198.png" alt="Run map">
-            <img src="map_images/13918257279.png" alt="Run map">
-            <img src="map_images/13946914922.png" alt="Run map">
-            <img src="map_images/13962146690.png" alt="Run map">
-            <img src="map_images/14017045460.png" alt="Run map">
-            <img src="map_images/14036165409.png" alt="Run map">
-            <img src="map_images/14060841514.png" alt="Run map">
-            <img src="map_images/14109717001.png" alt="Run map">
-            <img src="map_images/14162070157.png" alt="Run map">
-            <img src="map_images/14209728943.png" alt="Run map">
-            <img src="map_images/14297944038.png" alt="Run map">
-            <img src="map_images/14347872697.png" alt="Run map">
-            <img src="map_images/14371601176.png" alt="Run map">
-            <img src="map_images/14381948773.png" alt="Run map">
-            <img src="map_images/14444066704.png" alt="Run map">
-            <img src="map_images/14468867703.png" alt="Run map">
+        <div class="marathon-majors-section">
+            <h2>Abbott World Marathon Majors</h2>
+            <div class="marathon-gallery">
+                <div class="marathon-item">
+                    <a href="https://www.baa.org/races/boston-marathon" target="_blank" title="Boston Marathon">
+                        <img src="updated_map_images/10001.jpg" alt="Boston Marathon Logo">
+                        <p>TBD</p>
+                    </a>
+                </div>
+                <div class="marathon-item">
+                    <a href="https://www.nyrr.org/tcsnycmarathon" target="_blank" title="New York City Marathon">
+                        <img src="updated_map_images/10002.jpg" alt="New York City Marathon Logo">
+                        <p>TBD</p>
+                    </a>
+                </div>
+                <div class="marathon-item">
+                    <a href="https://www.tcssydneymarathon.com/" target="_blank" title="Sydney Marathon">
+                        <img src="updated_map_images/10003.jpg" alt="Sydney Marathon Logo">
+                        <p>TBD</p>
+                    </a>
+                </div>
+                <div class="marathon-item">
+                    <a href="https://www.bmw-berlin-marathon.com/en/" target="_blank" title="Berlin Marathon">
+                        <img src="updated_map_images/10004.jpg" alt="Berlin Marathon Logo">
+                        <p>Finished in 2024</p>
+                        <p>4:35:57</p>                    
+                </div>
+                <div class="marathon-item">
+                    <a href="https://www.chicagomarathon.com/" target="_blank" title="Chicago Marathon">
+                        <img src="updated_map_images/10005.jpg" alt="Chicago Marathon Logo">
+                        <p>TBD</p>
+                    </a>
+                </div>
+                <div class="marathon-item">
+                    <a href="https://www.londonmarathonevents.co.uk/london-marathon" target="_blank" title="London Marathon">
+                        <img src="updated_map_images/10006.jpg" alt="London Marathon Logo">
+                        <p>TBD</p>
+                    </a>
+                </div>
+                <div class="marathon-item">
+                    <a href="https://www.marathon.tokyo/en/" target="_blank" title="Tokyo Marathon">
+                        <img src="updated_map_images/10007.jpg" alt="Tokyo Marathon Logo">
+                        <p>TBD</p>
+                    </a>
+                </div>
+            </div>
         </div>
+    </div> <!-- This closes .container -->
+        <div class="city-group">
+            <h2 class="city-group-header">Aci Sant'Antonio, Catania, Italy</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/14209728943.png" alt="Run map for 14209728943.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">Alicante, Spain</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20231225Outdoor run.png" alt="Run map for 20231225Outdoor run.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">Benalmádena, Málaga, Spain</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/13213854968.png" alt="Run map for 13213854968.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">Berlin, Germany</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20240928Outdoor run.png" alt="Run map for 20240928Outdoor run.gpx">
+                <img src="updated_map_images/20240929Outdoor run.png" alt="Run map for 20240929Outdoor run.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">Breda, Nederland</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20231001Outdoor run.png" alt="Run map for 20231001Outdoor run.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">Chicago, United States</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20240807Outdoor run.png" alt="Run map for 20240807Outdoor run.gpx">
+                <img src="updated_map_images/20240810Outdoor run.png" alt="Run map for 20240810Outdoor run.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">City of New York, United States</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20230812Outdoor run.png" alt="Run map for 20230812Outdoor run.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">Leiden, Nederland</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/14444066704.png" alt="Run map for 14444066704.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">Montenegro</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20240822Outdoor run.png" alt="Run map for 20240822Outdoor run.gpx">
+            </div>
+        </div>
+    <div class ="container">
+        <div class="city-group">
+            <h2 class="city-group-header">Rotterdam, Nederland</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/12767439580.png" alt="Run map for 12767439580.gpx">
+                <img src="updated_map_images/12784710701.png" alt="Run map for 12784710701.gpx">
+                <img src="updated_map_images/12854175932.png" alt="Run map for 12854175932.gpx">
+                <img src="updated_map_images/12920079311.png" alt="Run map for 12920079311.gpx">
+                <img src="updated_map_images/13291388295.png" alt="Run map for 13291388295.gpx">
+                <img src="updated_map_images/13332766373.png" alt="Run map for 13332766373.gpx">
+                <img src="updated_map_images/13430160110.png" alt="Run map for 13430160110.gpx">
+                <img src="updated_map_images/13454439320.png" alt="Run map for 13454439320.gpx">
+                <img src="updated_map_images/13493784519.png" alt="Run map for 13493784519.gpx">
+                <img src="updated_map_images/13507865322.png" alt="Run map for 13507865322.gpx">
+                <img src="updated_map_images/13516447588.png" alt="Run map for 13516447588.gpx">
+                <img src="updated_map_images/13544161180.png" alt="Run map for 13544161180.gpx">
+                <img src="updated_map_images/13557315646.png" alt="Run map for 13557315646.gpx">
+                <img src="updated_map_images/13561240854.png" alt="Run map for 13561240854.gpx">
+                <img src="updated_map_images/13570874015.png" alt="Run map for 13570874015.gpx">
+                <img src="updated_map_images/13579036041.png" alt="Run map for 13579036041.gpx">
+                <img src="updated_map_images/13605831832.png" alt="Run map for 13605831832.gpx">
+                <img src="updated_map_images/13617481078.png" alt="Run map for 13617481078.gpx">
+                <img src="updated_map_images/13631316781.png" alt="Run map for 13631316781.gpx">
+                <img src="updated_map_images/13639556141.png" alt="Run map for 13639556141.gpx">
+                <img src="updated_map_images/13676356902.png" alt="Run map for 13676356902.gpx">
+                <img src="updated_map_images/13693388737.png" alt="Run map for 13693388737.gpx">
+                <img src="updated_map_images/13724666860.png" alt="Run map for 13724666860.gpx">
+                <img src="updated_map_images/13756997815.png" alt="Run map for 13756997815.gpx">
+                <img src="updated_map_images/13807158635.png" alt="Run map for 13807158635.gpx">
+                <img src="updated_map_images/13820292791.png" alt="Run map for 13820292791.gpx">
+                <img src="updated_map_images/13829892213.png" alt="Run map for 13829892213.gpx">
+                <img src="updated_map_images/13886612117.png" alt="Run map for 13886612117.gpx">
+                <img src="updated_map_images/13895413198.png" alt="Run map for 13895413198.gpx">
+                <img src="updated_map_images/13918257279.png" alt="Run map for 13918257279.gpx">
+                <img src="updated_map_images/13946914922.png" alt="Run map for 13946914922.gpx">
+                <img src="updated_map_images/13962146690.png" alt="Run map for 13962146690.gpx">
+                <img src="updated_map_images/14017045460.png" alt="Run map for 14017045460.gpx">
+                <img src="updated_map_images/14036165409.png" alt="Run map for 14036165409.gpx">
+                <img src="updated_map_images/14060841514.png" alt="Run map for 14060841514.gpx">
+                <img src="updated_map_images/14109717001.png" alt="Run map for 14109717001.gpx">
+                <img src="updated_map_images/14162070157.png" alt="Run map for 14162070157.gpx">
+                <img src="updated_map_images/14297944038.png" alt="Run map for 14297944038.gpx">
+                <img src="updated_map_images/14347872697.png" alt="Run map for 14347872697.gpx">
+                <img src="updated_map_images/14371601176.png" alt="Run map for 14371601176.gpx">
+                <img src="updated_map_images/14381948773.png" alt="Run map for 14381948773.gpx">
+                <img src="updated_map_images/14468867703.png" alt="Run map for 14468867703.gpx">
+                <img src="updated_map_images/20210918Outdoor run.png" alt="Run map for 20210918Outdoor run.gpx">
+                <img src="updated_map_images/20210924Outdoor run.png" alt="Run map for 20210924Outdoor run.gpx">
+                <img src="updated_map_images/20210926Outdoor run.png" alt="Run map for 20210926Outdoor run.gpx">
+                <img src="updated_map_images/20211006Outdoor run.png" alt="Run map for 20211006Outdoor run.gpx">
+                <img src="updated_map_images/20211007Outdoor run.png" alt="Run map for 20211007Outdoor run.gpx">
+                <img src="updated_map_images/20211029Outdoor run.png" alt="Run map for 20211029Outdoor run.gpx">
+                <img src="updated_map_images/20211105Outdoor run.png" alt="Run map for 20211105Outdoor run.gpx">
+                <img src="updated_map_images/20211107Outdoor run.png" alt="Run map for 20211107Outdoor run.gpx">
+                <img src="updated_map_images/20211119Outdoor run.png" alt="Run map for 20211119Outdoor run.gpx">
+                <img src="updated_map_images/20211121Outdoor run.png" alt="Run map for 20211121Outdoor run.gpx">
+                <img src="updated_map_images/20211203Outdoor run.png" alt="Run map for 20211203Outdoor run.gpx">
+                <img src="updated_map_images/20211205Outdoor run.png" alt="Run map for 20211205Outdoor run.gpx">
+                <img src="updated_map_images/20211210Outdoor run.png" alt="Run map for 20211210Outdoor run.gpx">
+                <img src="updated_map_images/20211212Outdoor run.png" alt="Run map for 20211212Outdoor run.gpx">
+                <img src="updated_map_images/20211217Outdoor run.png" alt="Run map for 20211217Outdoor run.gpx">
+                <img src="updated_map_images/20211219Outdoor run.png" alt="Run map for 20211219Outdoor run.gpx">
+                <img src="updated_map_images/20211223Outdoor run.png" alt="Run map for 20211223Outdoor run.gpx">
+                <img src="updated_map_images/20211230Outdoor run.png" alt="Run map for 20211230Outdoor run.gpx">
+                <img src="updated_map_images/20220102Outdoor run.png" alt="Run map for 20220102Outdoor run.gpx">
+                <img src="updated_map_images/20220105Outdoor run.png" alt="Run map for 20220105Outdoor run.gpx">
+                <img src="updated_map_images/20220107Outdoor run.png" alt="Run map for 20220107Outdoor run.gpx">
+                <img src="updated_map_images/20220109Outdoor run.png" alt="Run map for 20220109Outdoor run.gpx">
+                <img src="updated_map_images/20220112Outdoor run.png" alt="Run map for 20220112Outdoor run.gpx">
+                <img src="updated_map_images/20220114Outdoor run.png" alt="Run map for 20220114Outdoor run.gpx">
+                <img src="updated_map_images/20220116Outdoor run.png" alt="Run map for 20220116Outdoor run.gpx">
+                <img src="updated_map_images/20220119Outdoor run.png" alt="Run map for 20220119Outdoor run.gpx">
+                <img src="updated_map_images/20220121Outdoor run.png" alt="Run map for 20220121Outdoor run.gpx">
+                <img src="updated_map_images/20220123Outdoor run.png" alt="Run map for 20220123Outdoor run.gpx">
+                <img src="updated_map_images/20220128Outdoor run.png" alt="Run map for 20220128Outdoor run.gpx">
+                <img src="updated_map_images/20220130Outdoor run.png" alt="Run map for 20220130Outdoor run.gpx">
+                <img src="updated_map_images/20220211Outdoor run.png" alt="Run map for 20220211Outdoor run.gpx">
+                <img src="updated_map_images/20220213Outdoor run.png" alt="Run map for 20220213Outdoor run.gpx">
+                <img src="updated_map_images/20220221Outdoor run.png" alt="Run map for 20220221Outdoor run.gpx">
+                <img src="updated_map_images/20220227Outdoor run.png" alt="Run map for 20220227Outdoor run.gpx">
+                <img src="updated_map_images/20220304Outdoor run.png" alt="Run map for 20220304Outdoor run.gpx">
+                <img src="updated_map_images/20220306Outdoor run.png" alt="Run map for 20220306Outdoor run.gpx">
+                <img src="updated_map_images/20220311Outdoor run.png" alt="Run map for 20220311Outdoor run.gpx">
+                <img src="updated_map_images/20220313Outdoor run.png" alt="Run map for 20220313Outdoor run.gpx">
+                <img src="updated_map_images/20220318Outdoor run.png" alt="Run map for 20220318Outdoor run.gpx">
+                <img src="updated_map_images/20220320Outdoor run.png" alt="Run map for 20220320Outdoor run.gpx">
+                <img src="updated_map_images/20220322Outdoor run.png" alt="Run map for 20220322Outdoor run.gpx">
+                <img src="updated_map_images/20220325Outdoor run.png" alt="Run map for 20220325Outdoor run.gpx">
+                <img src="updated_map_images/20220326Outdoor run.png" alt="Run map for 20220326Outdoor run.gpx">
+                <img src="updated_map_images/20220327Outdoor run.png" alt="Run map for 20220327Outdoor run.gpx">
+                <img src="updated_map_images/20220330Outdoor run.png" alt="Run map for 20220330Outdoor run.gpx">
+                <img src="updated_map_images/20220401Outdoor run.png" alt="Run map for 20220401Outdoor run.gpx">
+                <img src="updated_map_images/20220410Outdoor run.png" alt="Run map for 20220410Outdoor run.gpx">
+                <img src="updated_map_images/20220415Outdoor run.png" alt="Run map for 20220415Outdoor run.gpx">
+                <img src="updated_map_images/20220510Outdoor run.png" alt="Run map for 20220510Outdoor run.gpx">
+                <img src="updated_map_images/20220512Outdoor run.png" alt="Run map for 20220512Outdoor run.gpx">
+                <img src="updated_map_images/20220517Outdoor run.png" alt="Run map for 20220517Outdoor run.gpx">
+                <img src="updated_map_images/20220519Outdoor run.png" alt="Run map for 20220519Outdoor run.gpx">
+                <img src="updated_map_images/20220531Outdoor run.png" alt="Run map for 20220531Outdoor run.gpx">
+                <img src="updated_map_images/20220607Outdoor run.png" alt="Run map for 20220607Outdoor run.gpx">
+                <img src="updated_map_images/20220609Outdoor run.png" alt="Run map for 20220609Outdoor run.gpx">
+                <img src="updated_map_images/20220616Outdoor run.png" alt="Run map for 20220616Outdoor run.gpx">
+                <img src="updated_map_images/20220621Outdoor run.png" alt="Run map for 20220621Outdoor run.gpx">
+                <img src="updated_map_images/20220623Outdoor run.png" alt="Run map for 20220623Outdoor run.gpx">
+                <img src="updated_map_images/20220628Outdoor run.png" alt="Run map for 20220628Outdoor run.gpx">
+                <img src="updated_map_images/20220707Outdoor run.png" alt="Run map for 20220707Outdoor run.gpx">
+                <img src="updated_map_images/20220714Outdoor run.png" alt="Run map for 20220714Outdoor run.gpx">
+                <img src="updated_map_images/20220721Outdoor run.png" alt="Run map for 20220721Outdoor run.gpx">
+                <img src="updated_map_images/20220724Outdoor run.png" alt="Run map for 20220724Outdoor run.gpx">
+                <img src="updated_map_images/20220816Outdoor run.png" alt="Run map for 20220816Outdoor run.gpx">
+                <img src="updated_map_images/20220818Outdoor run.png" alt="Run map for 20220818Outdoor run.gpx">
+                <img src="updated_map_images/20220821Outdoor run.png" alt="Run map for 20220821Outdoor run.gpx">
+                <img src="updated_map_images/20220823Outdoor run.png" alt="Run map for 20220823Outdoor run.gpx">
+                <img src="updated_map_images/20220825Outdoor run.png" alt="Run map for 20220825Outdoor run.gpx">
+                <img src="updated_map_images/20220831Outdoor run.png" alt="Run map for 20220831Outdoor run.gpx">
+                <img src="updated_map_images/20220904Outdoor run.png" alt="Run map for 20220904Outdoor run.gpx">
+                <img src="updated_map_images/20220907Outdoor run.png" alt="Run map for 20220907Outdoor run.gpx">
+                <img src="updated_map_images/20220915Outdoor run.png" alt="Run map for 20220915Outdoor run.gpx">
+                <img src="updated_map_images/20220927Outdoor run.png" alt="Run map for 20220927Outdoor run.gpx">
+                <img src="updated_map_images/20221002Outdoor run.png" alt="Run map for 20221002Outdoor run.gpx">
+                <img src="updated_map_images/20221006Outdoor run.png" alt="Run map for 20221006Outdoor run.gpx">
+                <img src="updated_map_images/20221016Outdoor run.png" alt="Run map for 20221016Outdoor run.gpx">
+                <img src="updated_map_images/20221022Outdoor run.png" alt="Run map for 20221022Outdoor run.gpx">
+                <img src="updated_map_images/20221113Outdoor run.png" alt="Run map for 20221113Outdoor run.gpx">
+                <img src="updated_map_images/20221115Outdoor run.png" alt="Run map for 20221115Outdoor run.gpx">
+                <img src="updated_map_images/20221203Outdoor run.png" alt="Run map for 20221203Outdoor run.gpx">
+                <img src="updated_map_images/20221206Outdoor run.png" alt="Run map for 20221206Outdoor run.gpx">
+                <img src="updated_map_images/20221228Outdoor run.png" alt="Run map for 20221228Outdoor run.gpx">
+                <img src="updated_map_images/20230107Outdoor run.png" alt="Run map for 20230107Outdoor run.gpx">
+                <img src="updated_map_images/20230220Outdoor run.png" alt="Run map for 20230220Outdoor run.gpx">
+                <img src="updated_map_images/20230226Outdoor run.png" alt="Run map for 20230226Outdoor run.gpx">
+                <img src="updated_map_images/20230312Outdoor run.png" alt="Run map for 20230312Outdoor run.gpx">
+                <img src="updated_map_images/20230319Outdoor run.png" alt="Run map for 20230319Outdoor run.gpx">
+                <img src="updated_map_images/20230402Outdoor run.png" alt="Run map for 20230402Outdoor run.gpx">
+                <img src="updated_map_images/20230408Outdoor run.png" alt="Run map for 20230408Outdoor run.gpx">
+                <img src="updated_map_images/20230412Outdoor run.png" alt="Run map for 20230412Outdoor run.gpx">
+                <img src="updated_map_images/20230415Outdoor run.png" alt="Run map for 20230415Outdoor run.gpx">
+                <img src="updated_map_images/20230416Outdoor run.png" alt="Run map for 20230416Outdoor run.gpx">
+                <img src="updated_map_images/20230418Outdoor run.png" alt="Run map for 20230418Outdoor run.gpx">
+                <img src="updated_map_images/20230423Outdoor run.png" alt="Run map for 20230423Outdoor run.gpx">
+                <img src="updated_map_images/20230506Outdoor run.png" alt="Run map for 20230506Outdoor run.gpx">
+                <img src="updated_map_images/20230512Outdoor run.png" alt="Run map for 20230512Outdoor run.gpx">
+                <img src="updated_map_images/20230518Outdoor run.png" alt="Run map for 20230518Outdoor run.gpx">
+                <img src="updated_map_images/20230521Outdoor run.png" alt="Run map for 20230521Outdoor run.gpx">
+                <img src="updated_map_images/20230528Outdoor run.png" alt="Run map for 20230528Outdoor run.gpx">
+                <img src="updated_map_images/20230603Outdoor run.png" alt="Run map for 20230603Outdoor run.gpx">
+                <img src="updated_map_images/20230604Outdoor run.png" alt="Run map for 20230604Outdoor run.gpx">
+                <img src="updated_map_images/20230606Outdoor run.png" alt="Run map for 20230606Outdoor run.gpx">
+                <img src="updated_map_images/20230819Outdoor run.png" alt="Run map for 20230819Outdoor run.gpx">
+                <img src="updated_map_images/20230820Outdoor run.png" alt="Run map for 20230820Outdoor run.gpx">
+                <img src="updated_map_images/20230826Outdoor run.png" alt="Run map for 20230826Outdoor run.gpx">
+                <img src="updated_map_images/20230902Outdoor run.png" alt="Run map for 20230902Outdoor run.gpx">
+                <img src="updated_map_images/20230903Outdoor run.png" alt="Run map for 20230903Outdoor run.gpx">
+                <img src="updated_map_images/20230909Outdoor run.png" alt="Run map for 20230909Outdoor run.gpx">
+                <img src="updated_map_images/20230910Outdoor run.png" alt="Run map for 20230910Outdoor run.gpx">
+                <img src="updated_map_images/20230913Outdoor run.png" alt="Run map for 20230913Outdoor run.gpx">
+                <img src="updated_map_images/20230917Outdoor run.png" alt="Run map for 20230917Outdoor run.gpx">
+                <img src="updated_map_images/20230920Outdoor run.png" alt="Run map for 20230920Outdoor run.gpx">
+                <img src="updated_map_images/20230924Outdoor run.png" alt="Run map for 20230924Outdoor run.gpx">
+                <img src="updated_map_images/20230928Outdoor run.png" alt="Run map for 20230928Outdoor run.gpx">
+                <img src="updated_map_images/20231005Outdoor run.png" alt="Run map for 20231005Outdoor run.gpx">
+                <img src="updated_map_images/20231022Outdoor run.png" alt="Run map for 20231022Outdoor run.gpx">
+                <img src="updated_map_images/20231028Outdoor run.png" alt="Run map for 20231028Outdoor run.gpx">
+                <img src="updated_map_images/20231029Outdoor run.png" alt="Run map for 20231029Outdoor run.gpx">
+                <img src="updated_map_images/20231230Outdoor run.png" alt="Run map for 20231230Outdoor run.gpx">
+                <img src="updated_map_images/20240114Outdoor run.png" alt="Run map for 20240114Outdoor run.gpx">
+                <img src="updated_map_images/20240229Outdoor run.png" alt="Run map for 20240229Outdoor run.gpx">
+                <img src="updated_map_images/20240306Outdoor run.png" alt="Run map for 20240306Outdoor run.gpx">
+                <img src="updated_map_images/20240310Outdoor run.png" alt="Run map for 20240310Outdoor run.gpx">
+                <img src="updated_map_images/20240315Outdoor run.png" alt="Run map for 20240315Outdoor run.gpx">
+                <img src="updated_map_images/20240317Outdoor run.png" alt="Run map for 20240317Outdoor run.gpx">
+                <img src="updated_map_images/20240320Outdoor run.png" alt="Run map for 20240320Outdoor run.gpx">
+                <img src="updated_map_images/20240323Outdoor run.png" alt="Run map for 20240323Outdoor run.gpx">
+                <img src="updated_map_images/20240327Outdoor run.png" alt="Run map for 20240327Outdoor run.gpx">
+                <img src="updated_map_images/20240330Outdoor run.png" alt="Run map for 20240330Outdoor run.gpx">
+                <img src="updated_map_images/20240407Outdoor run.png" alt="Run map for 20240407Outdoor run.gpx">
+                <img src="updated_map_images/20240414Outdoor run.png" alt="Run map for 20240414Outdoor run.gpx">
+                <img src="updated_map_images/20240428Outdoor run.png" alt="Run map for 20240428Outdoor run.gpx">
+                <img src="updated_map_images/20240607Outdoor run.png" alt="Run map for 20240607Outdoor run.gpx">
+                <img src="updated_map_images/20240609Outdoor run.png" alt="Run map for 20240609Outdoor run.gpx">
+                <img src="updated_map_images/20240616Outdoor run.png" alt="Run map for 20240616Outdoor run.gpx">
+                <img src="updated_map_images/20240713Outdoor run.png" alt="Run map for 20240713Outdoor run.gpx">
+                <img src="updated_map_images/20240720Outdoor run.png" alt="Run map for 20240720Outdoor run.gpx">
+                <img src="updated_map_images/20240721Outdoor run.png" alt="Run map for 20240721Outdoor run.gpx">
+                <img src="updated_map_images/20240801Outdoor run.png" alt="Run map for 20240801Outdoor run.gpx">
+                <img src="updated_map_images/20240818Outdoor run.png" alt="Run map for 20240818Outdoor run.gpx">
+                <img src="updated_map_images/20240819Outdoor run.png" alt="Run map for 20240819Outdoor run.gpx">
+                <img src="updated_map_images/20240828Outdoor run.png" alt="Run map for 20240828Outdoor run.gpx">
+                <img src="updated_map_images/20241022Outdoor run.png" alt="Run map for 20241022Outdoor run.gpx">
+                <img src="updated_map_images/20241117Outdoor run.png" alt="Run map for 20241117Outdoor run.gpx">
+            </div>
+        </div>
+    </div>
+        <div class="city-group">
+            <h2 class="city-group-header">香港九龍 Kowloon, 中国</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20230614Outdoor run.png" alt="Run map for 20230614Outdoor run.gpx">
+                <img src="updated_map_images/20230616Outdoor run.png" alt="Run map for 20230616Outdoor run.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">安吉县, 中国</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20240902Outdoor run.png" alt="Run map for 20240902Outdoor run.gpx">
+            </div>
+        </div>
+        <div class="city-group">
+            <h2 class="city-group-header">上海浦东新区, 中国</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20230801Outdoor run.png" alt="Run map for 20230801Outdoor run.gpx">
+                <img src="updated_map_images/20240202Outdoor run.png" alt="Run map for 20240202Outdoor run.gpx">
+            </div>
+        </div>
+        <div class ="container">
+        <div class="city-group">
 
+            <h2 class="city-group-header">监利市, 中国</h2>
+            <div class="map-grid">
+                <img src="updated_map_images/20230627Outdoor run.png" alt="Run map for 20230627Outdoor run.gpx">
+                <img src="updated_map_images/20230628Outdoor run.png" alt="Run map for 20230628Outdoor run.gpx">
+                <img src="updated_map_images/20230724Outdoor run.png" alt="Run map for 20230724Outdoor run.gpx">
+                <img src="updated_map_images/20230726Outdoor run.png" alt="Run map for 20230726Outdoor run.gpx">
+                <img src="updated_map_images/20230727Outdoor run.png" alt="Run map for 20230727Outdoor run.gpx">
+                <img src="updated_map_images/20230729Outdoor run.png" alt="Run map for 20230729Outdoor run.gpx">
+            </div>
+        </div>
+    </div>
         <div class="stats-section">
             <div class="overall-stats">
                 <h2>STATISTICS</h2>
-                <p>Total Runs: 45</p>
-                <p>Total Distance: 432.80 km</p>
-                <p>Average Distance: 9.62 km</p>
-                <p>Max Distance: 23.70 km</p>
-                <p>Total Elevation Gain: 1496.9 m</p>
+                <p>Total Runs: 208</p>
+                <p>Total Distance: 1607.41 km</p>
+                <p>Average Distance: 7.73 km</p>
+                <p>Max Distance: 42.43 km</p>
+                <p>Total Elevation Gain: 12125.2 m</p>
             </div>
-
             <div class="best-efforts">
                 <h2>BEST EFFORTS</h2>
-                <p>400m: 1:05</p>
                 <p>1 mile: 6:42</p>
                 <p>5K: 22:30</p>
-                <p>10K: 46:17</p>
+                <p>10K: 46:13</p>
                 <p>15K: 1:13:23</p>
                 <p>Half-Marathon: 1:43:43</p>
+                <p>Marathon: 4:35:57</p>
             </div>
         </div>
-
         <footer>
-            <p class="footer-title">Johan's Running Journey in 2025</p>
+            <p class="footer-title">Johan's Running Journey as of May 14, 2025</p>
         </footer>
     </div>
 </body>
 </html>
-
