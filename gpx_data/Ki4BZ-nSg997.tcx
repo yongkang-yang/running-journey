@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TrainingCenterDatabase xmlns="http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2" xmlns:ns3="http://www.garmin.com/xmlschemas/ActivityExtension/v2" xsi:schemaLocation="http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2 http://www.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd" xmlns:nax="https://www.nike.com/xmlschemas/NikeActivityExtension/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns5="http://www.garmin.com/xmlschemas/ActivityGoals/v1" xmlns:ns2="http://www.garmin.com/xmlschemas/UserProfile/v2">
+      <Activities>
+      <Activity Sport="Running">
+      <Id>
+      2019-06-10T13:16:47.941Z
+    </Id><Lap StartTime="2019-06-10T13:16:47.941Z">
+      <TotalTimeSeconds>
+      120
+    </TotalTimeSeconds><DistanceMeters>
+      245.90637641515744
+    </DistanceMeters><MaximumSpeed>
+      2.0492198034596454
+    </MaximumSpeed><Calories>
+      11
+    </Calories><Intensity>
+      Active
+    </Intensity><TriggerMethod>
+      Manual
+    </TriggerMethod><Track>
+      <Trackpoint>
+      <Time>
+      2019-06-10T13:16:47.974Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      0
+    </ns3:Speed>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:47.982Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53163278
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33811119
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      0
+    </ns3:Speed>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:47.995Z
+    </Time><AltitudeMeters>
+      16.441242373030036
+    </AltitudeMeters><DistanceMeters>
+      1.1678913178119934
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      0
+    </ns3:Speed>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:48.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      0
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:48.307Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53162262
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33810809
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      0
+    </ns3:Speed>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:53.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      0.48812060775650457
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:53.941Z
+    </Time><AltitudeMeters>
+      16.56930853654012
+    </AltitudeMeters><DistanceMeters>
+      10.250848624169084
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      0
+    </ns3:Speed>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:55.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      1.0935109609983653
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:55.323Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53155818
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33803172
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.3205301914580263
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.621193195336668
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:57.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      2.554294013277798
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:16:57.980Z
+    </Time><AltitudeMeters>
+      16.56930853654012
+    </AltitudeMeters><DistanceMeters>
+      10.004685330522275
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.1507778891208433
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.749134278797784
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:01.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:01.320Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53148958
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33796431
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.4306761336598828
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      6.856802696117138
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:07.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:07.986Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53148958
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33796431
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.7565583911127667
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      6.046186694394191
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:08.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:08.980Z
+    </Time><AltitudeMeters>
+      18.853837730775922
+    </AltitudeMeters><DistanceMeters>
+      30.818060997975195
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.965910612396739
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      5.619409633252031
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:11.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:11.323Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53155558
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33804712
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      10.736341340318173
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      3.056142474070645
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      5.453497933447917
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:16.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:16.338Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53165017
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33806901
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.27
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      13.123359580052494
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:19.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:19.984Z
+    </Time><AltitudeMeters>
+      21.324879648576825
+    </AltitudeMeters><DistanceMeters>
+      11.14218921910852
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.27
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      13.123359580052494
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:22.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:22.311Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53172403
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33799058
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      10.483916582909577
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.36
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.254901960784311
+    </nax:Pace><nax:AscentInMeters>
+      5.290068473666906
+    </nax:AscentInMeters>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:29.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:29.314Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53180475
+    </LatitudeDegrees><LongitudeDegrees>
+      114.3380469
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.3800000000000001
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.077294685990337
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:30.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:30.988Z
+    </Time><AltitudeMeters>
+      21.753278257738202
+    </AltitudeMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.3800000000000001
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.077294685990337
+    </nax:Pace><nax:AscentInMeters>
+      0.021967411041259766
+    </nax:AscentInMeters>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:38.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:38.994Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53180475
+    </LatitudeDegrees><LongitudeDegrees>
+      114.3380469
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      10.193853614327647
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.35
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.345679012345677
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:39.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:39.316Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53189494
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33806531
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.35
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.345679012345677
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:41.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:41.991Z
+    </Time><AltitudeMeters>
+      21.299141409288495
+    </AltitudeMeters><DistanceMeters>
+      10.517035768441207
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.35
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.345679012345677
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:45.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:45.315Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53197921
+    </LatitudeDegrees><LongitudeDegrees>
+      114.3381149
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.35
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.345679012345677
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:48.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:48.317Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53197921
+    </LatitudeDegrees><LongitudeDegrees>
+      114.3381149
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      10.617049656603095
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.35
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      12.345679012345677
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:49.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:49.315Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53206275
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33816833
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.42
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      11.737089201877934
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:51.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:51.998Z
+    </Time><AltitudeMeters>
+      21.68871975172624
+    </AltitudeMeters><DistanceMeters>
+      10.40955549372892
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.42
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      11.737089201877934
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:56.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:17:56.310Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53215069
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33813141
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      32.090851609065105
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.6
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      10.416666666666664
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:01.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:01.312Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53219234
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33801495
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.62
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      10.288065843621398
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:02.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:02.005Z
+    </Time><AltitudeMeters>
+      19.76639032591447
+    </AltitudeMeters><DistanceMeters>
+      12.651253566500403
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.62
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      10.288065843621398
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:06.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:06.312Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53222307
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33788792
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      10.69207974741157
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.71
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      9.746588693957117
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:10.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:10.320Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53224977
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33778081
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.79
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      9.31098696461825
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:12.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:12.011Z
+    </Time><AltitudeMeters>
+      16.605299460183232
+    </AltitudeMeters><DistanceMeters>
+      10.653147007631064
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.79
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      9.31098696461825
+    </nax:Pace><nax:DescentInMeters>
+      5.14797879755497
+    </nax:DescentInMeters>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:15.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:15.313Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53229122
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33768067
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      12.194254505233316
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.84
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      9.057971014492752
+    </nax:Pace><nax:DescentInMeters>
+      1.221681222319603
+    </nax:DescentInMeters>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:21.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:21.307Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53232938
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33756146
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.9699999999999998
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      8.460236886632826
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:23.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:23.013Z
+    </Time><AltitudeMeters>
+      14.871348860155194
+    </AltitudeMeters><DistanceMeters>
+      10.443342995854172
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.9699999999999998
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      8.460236886632826
+    </nax:Pace><nax:DescentInMeters>
+      0.5122693777084351
+    </nax:DescentInMeters>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:25.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:25.310Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53235332
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33745615
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      10.115128550646723
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      1.98
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      8.417508417508417
+    </nax:Pace><nax:DescentInMeters>
+      0.3879653215408325
+    </nax:DescentInMeters>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:29.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:29.312Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.5323976
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33736403
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:34.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:34.015Z
+    </Time><AltitudeMeters>
+      14.198970320116132
+    </AltitudeMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:36.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:36.020Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.5323976
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33736403
+    </LongitudeDegrees>
+    </Position><DistanceMeters>
+      10.056915365858982
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:38.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:38.319Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53245301
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33728119
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace><nax:DescentInMeters>
+      0.28441321849823
+    </nax:DescentInMeters>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:44.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:44.021Z
+    </Time><AltitudeMeters>
+      14.489640953432172
+    </AltitudeMeters><DistanceMeters>
+      10.667975121040424
+    </DistanceMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:44.314Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53249892
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33718353
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:48.001Z
+    </Time><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <nax:Nax>
+      <nax:NikeFuel>
+      4.307163939346417
+    </nax:NikeFuel><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:48.749Z
+    </Time><AltitudeMeters>
+      14.489640953432172
+    </AltitudeMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:48.754Z
+    </Time><Position>
+      <LatitudeDegrees>
+      30.53249892
+    </LatitudeDegrees><LongitudeDegrees>
+      114.33718353
+    </LongitudeDegrees>
+    </Position><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      2.11
+    </ns3:Speed><nax:Nax>
+      <nax:Pace>
+      7.898894154818325
+    </nax:Pace><nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+<Trackpoint>
+      <Time>
+      2019-06-10T13:18:50.169Z
+    </Time><AltitudeMeters>
+      14.489640953432172
+    </AltitudeMeters><SensorState>
+      Present
+    </SensorState><Extensions>
+      <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+      <ns3:Speed>
+      0
+    </ns3:Speed><nax:Nax>
+      <nax:Moments>
+      <nax:Halt xsi:type="nax:Halt_t" action="pause">
+      
+    </nax:Halt>
+    </nax:Moments>
+    </nax:Nax>
+    </TPX>
+    </Extensions>
+    </Trackpoint>
+    </Track><Notes>
+      Mean Pace: 8.133176655100034 MKM
+    </Notes>
+    </Lap><Extensions>
+      <nax:NAX>
+      <nax:ActivityType>
+      Running
+    </nax:ActivityType><nax:Tags>
+      <nax:Tag>
+      <nax:Key>
+      com.nike.name
+    </nax:Key><nax:Value>
+      Monday Night Run
+    </nax:Value><nax:Key>
+      com.nike.running.goaltype
+    </nax:Key><nax:Value>
+      basic
+    </nax:Value><nax:Key>
+      com.nike.temperature
+    </nax:Key><nax:Value>
+      28.388888888888886
+    </nax:Value><nax:Key>
+      com.nike.weather
+    </nax:Key><nax:Value>
+      clear_night
+    </nax:Value><nax:Key>
+      location
+    </nax:Key><nax:Value>
+      outdoors
+    </nax:Value><nax:Key>
+      shoe_id
+    </nax:Key><nax:Value>
+      93ac9396-438a-44e2-a653-28a1368cbdd7
+    </nax:Value>
+    </nax:Tag>
+    </nax:Tags>
+    </nax:NAX>
+    </Extensions>
+    </Activity>
+    </Activities>
+    </TrainingCenterDatabase>
