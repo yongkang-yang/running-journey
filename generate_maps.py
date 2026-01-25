@@ -35,8 +35,8 @@ def generate_map_image(track_points, output_path, line_color='white', bg_color='
     # print(f"Saved map image to {output_path}")
 
 if __name__ == "__main__":
-    data_file = "/home/ubuntu/running_website/processed_gpx_data.json"
-    output_dir = "/home/ubuntu/running_website/map_images"
+    data_file = "/Users/johanyang/Github Repo/running-journey/processed_gpx_data.json"
+    output_dir = "/Users/johanyang/Github Repo/running-journey/updated_map_images"
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
