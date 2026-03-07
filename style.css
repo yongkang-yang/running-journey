@@ -4,9 +4,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    padding-left: 220px; 
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .container {
@@ -22,33 +25,53 @@ body {
     letter-spacing: 2px;
 }
 
+.city-group {
+    width: 90%;
+    max-width: 1200px;
+}
+
 .city-group-header {
     font-size: 1.8em;
-    margin-top: 40px; /* Add some space above city headers */
-    margin-bottom: 20px;
-    text-align: left; /* Align city names to the left */
-    border-bottom: 1px solid #555; /* Subtle separator */
+    margin-top: 40px; 
+    margin-bottom: 10px;
+    text-align: left; 
+    border-bottom: 1px solid #555; 
     padding-bottom: 10px;
+}
+
+.city-description {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .map-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
     gap: 10px;
     margin-bottom: 40px;
     padding: 10px;
-    border: 1px solid #333; /* Subtle border for the grid area */
+    border: 1px solid #333; 
 }
 
 .map-grid img {
-    width: 100%; /* Allow it to fill smaller cells up to its max-width */
-    max-width: 150px; /* Cap its maximum width */
-    height: 150px; /* Set a fixed height or max-height */
-    object-fit: contain; /* Scales the image to fit within the content box while maintaining aspect ratio */
-    background-color: black; /* Ensure transparent PNGs have black background if needed */
-    border: 1px solid #222; /* Subtle border for each map */
-    margin-left: auto; /* Center the image in the grid cell if it's smaller than the cell */
-    margin-right: auto; /* Center the image in the grid cell if it's smaller than the cell */
+    width: 100%; 
+    max-width: 150px; 
+    height: 150px; 
+    object-fit: contain; 
+    background-color: black; 
+    border: 1px solid #222; 
+    margin-left: auto; 
+    margin-right: auto; 
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.map-grid img:hover {
+    transform: scale(1.05);
+    border-color: #555;
 }
 
 .stats-section {
@@ -57,13 +80,14 @@ body {
     flex-wrap: wrap;
     margin-bottom: 40px;
     text-align: left;
-    width: 100%;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .overall-stats,
 .best-efforts {
     flex-basis: 45%;
-    min-width: 280px; /* Ensure readability on smaller flex items */
+    min-width: 280px; 
     margin-bottom: 20px;
 }
 
@@ -81,11 +105,136 @@ body {
     margin-bottom: 5px;
 }
 
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #111;
+    border-right: 1px solid #333;
+    overflow-y: auto;
+    padding: 20px 0;
+    z-index: 1000;
+}
+.sidebar-header {
+    font-size: 1.2em;
+    color: white;
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+}
+.sidebar a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    border-left: 3px solid transparent;
+    transition: background 0.2s, color 0.2s;
+}
+.sidebar a:hover, .sidebar a.active {
+    background-color: #222;
+    color: white;
+    border-left-color: #FC4C02; 
+}
+
+/* Mobile Toggle */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background: #222;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #444;
+}
+
+/* Year Filter Styles */
+.year-filter {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    background: transparent;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+.filter-btn:hover {
+    background: #333;
+    color: white;
+}
+.filter-btn.active {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+.lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 20px 0;
+    height: auto;
+}
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #fc4c02;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 footer {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #333;
-    width: 100%;
+    width: 90%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     font-size: 0.9em;
@@ -95,6 +244,12 @@ footer {
 footer p {
     margin: 0;
 }
+.footer-links a {
+    transition: color 0.2s;
+}
+.footer-links a:hover {
+    opacity: 0.8;
+}
 
 .footer-title {
     font-weight: bold;
@@ -103,8 +258,23 @@ footer p {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    body {
+        padding-left: 20px;
+        padding-top: 60px; 
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .mobile-nav-toggle {
+        display: block;
+    }
     .main-header h1 {
         font-size: 2.5em;
+        margin-top: 10px;
     }
     .city-group-header {
         font-size: 1.5em;
@@ -116,18 +286,17 @@ footer p {
     .overall-stats,
     .best-efforts {
         flex-basis: 100%;
-        width: 90%;
-        text-align: center;
-    }
-    .stats-section h2 {
-        text-align: center;
+        width: 100%;
+        text-align: left; 
     }
     footer {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
     footer p {
         margin-bottom: 5px;
+        text-align: center;
     }
 }
 
@@ -139,12 +308,11 @@ footer p {
         font-size: 1.3em;
     }
     .map-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjusted minmax for smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
         gap: 5px;
     }
     .map-grid img {
-        max-width: 100px; /* Further reduce max image size on very small screens */
+        max-width: 100px; 
         height: 100px;
     }
 }
-
