@@ -52,7 +52,7 @@ Yongkang-running-journey/
 
 ## Private data workflow
 
-Raw GPX and TCX exports are intentionally kept out of this repository. On the primary WSL machine they live in OneDrive at:
+Raw GPX, TCX, and COROS FIT exports are intentionally kept out of this repository. On the primary WSL machine they live in OneDrive at:
 
 ```
 /mnt/c/Users/ykyan/OneDrive/Life_YONGKANG/WIKI-YANG/data/running-journey/raw-tracks

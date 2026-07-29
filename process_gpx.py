@@ -6,7 +6,10 @@ import gpxpy.gpx
 import json
 from math import radians, sin, cos, sqrt, atan2
 from pathlib import Path
+import warnings
 import xml.etree.ElementTree as ET
+
+import fitdecode
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent
@@ -66,6 +69,38 @@ def parse_tcx_file(filepath):
                 tracks.append(track_points)
     return tracks
 
+
+def parse_fit_file(filepath):
+    """Extract GPS tracks plus recorded distance and ascent from a COROS FIT file."""
+    track_points = []
+    total_distance_km = 0
+    total_elevation_gain = 0
+    semicircles_to_degrees = 180 / (2 ** 31)
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        with fitdecode.FitReader(str(filepath), error_handling=fitdecode.ErrorHandling.WARN) as fit_file:
+            for frame in fit_file:
+                if frame.frame_type != fitdecode.FIT_FRAME_DATA:
+                    continue
+
+                fields = {field.name: field.value for field in frame.fields}
+                if frame.name == "record":
+                    latitude = fields.get("position_lat")
+                    longitude = fields.get("position_long")
+                    if latitude is not None and longitude is not None:
+                        elevation = fields.get("enhanced_altitude", fields.get("altitude"))
+                        track_points.append((
+                            latitude * semicircles_to_degrees,
+                            longitude * semicircles_to_degrees,
+                            elevation,
+                        ))
+                elif frame.name == "session":
+                    total_distance_km = (fields.get("total_distance") or 0) / 1000
+                    total_elevation_gain = fields.get("total_ascent") or 0
+
+    return ([track_points] if track_points else []), total_distance_km, total_elevation_gain
+
 def process_gpx_files(gpx_dir):
     all_runs_data = []
     total_distance_all_runs = 0
@@ -74,9 +109,9 @@ def process_gpx_files(gpx_dir):
     run_count = 0
     corrupted_files = []
 
-    for filename in os.listdir(gpx_dir):
-        if filename.endswith(".gpx") or filename.endswith(".tcx"):
-            filepath = os.path.join(gpx_dir, filename)
+    for filepath in sorted(Path(gpx_dir).rglob("*")):
+        if filepath.is_file() and filepath.suffix.lower() in {".gpx", ".tcx", ".fit"}:
+            filename = filepath.name
             try:
                 run_data = {
                     "filename": filename,
@@ -104,7 +139,7 @@ def process_gpx_files(gpx_dir):
                                             run_total_elevation_gain += elevation_diff
                                 previous_point = point
                         run_data["tracks"].append(track_points)
-                else:  # TCX file
+                elif filename.endswith(".tcx"):
                     tracks = parse_tcx_file(filepath)
                     for track_points in tracks:
                         previous_point = None
@@ -118,6 +153,8 @@ def process_gpx_files(gpx_dir):
                                         run_total_elevation_gain += elevation_diff
                             previous_point = point
                         run_data["tracks"].append(track_points)
+                else:  # FIT file
+                    run_data["tracks"], run_total_distance, run_total_elevation_gain = parse_fit_file(filepath)
                 
                 run_data["distance_km"] = run_total_distance
                 run_data["elevation_gain_m"] = run_total_elevation_gain
@@ -186,7 +223,7 @@ def main():
     with stats_output.open("w", encoding="utf-8") as f_stats:
         json.dump(stats_data, f_stats, indent=4)
 
-    print(f"Processed {stats_data['total_runs']} GPX/TCX files.")
+    print(f"Processed {stats_data['total_runs']} GPX/TCX/FIT files.")
     print(f"Private route data saved to {tracks_output}")
     print(f"Public aggregate statistics saved to {stats_output}")
     if stats_data['corrupted_files']:
