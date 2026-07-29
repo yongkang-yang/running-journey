@@ -3,54 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yongkang's Running Journey</title>
+    <meta name="description" content="A personal atlas of Yongkang Yang's running journeys around the world.">
+    <title>Running Journey · Yongkang Yang</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .marathon-majors-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
-        }
-        .marathon-majors-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .marathon-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: flex-start;
-            padding: 10px 0;
-        }
-        .marathon-item {
-            text-align: center;
-            margin: 10px;
-            width: 120px;
-        }
-        .marathon-item a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .marathon-item img {
-            width: 100%;
-            height: 100px;
-            object-fit: contain;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            background-color: white;
-        }
-        .marathon-item p {
-            margin-top: 0;
-            font-size: 0.9em;
-            color: #fffdfd;
-            line-height: 1.2;
-        }
-    </style>
 </head>
 <body>
-    <div class="mobile-nav-toggle" id="mobile-toggle">☰ Menu</div>
+    <button class="mobile-nav-toggle" id="mobile-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">Cities</div>
         <div id="sidebar-menu"></div>
@@ -63,8 +21,10 @@
     </div>
     <div class="container">
         <header class="main-header">
-            <h1>Yongkang's Running Page</h1>
-            <div class="year-filter">
+            <p class="eyebrow">Personal running atlas</p>
+            <h1>Run the world,<br><em>one route at a time.</em></h1>
+            <p class="hero-copy">345 recorded runs across cities, seasons, and finish lines. Explore the routes by year or place.</p>
+            <div class="year-filter" aria-label="Filter running routes by year">
                 <button class="filter-btn active" data-filter="All">All</button>
                 <button class="filter-btn" data-filter="2026">2026</button>
                 <button class="filter-btn" data-filter="2025">2025</button>
@@ -73,6 +33,7 @@
                 <button class="filter-btn" data-filter="2022">2022</button>
                 <button class="filter-btn" data-filter="2021">2021</button>
             </div>
+            <p class="filter-status" id="filter-status" aria-live="polite">Showing all recorded routes</p>
         </header>
         <div class="marathon-majors-section">
             <h2>Abbott World Marathon Majors</h2>
@@ -99,7 +60,8 @@
                     <a href="https://www.bmw-berlin-marathon.com/en/" target="_blank" title="Berlin Marathon">
                         <img src="updated_map_images/10004.jpg" alt="Berlin Marathon Logo">
                         <p>Finished in 2024</p>
-                        <p>4:35:57</p>                    
+                        <p>4:35:57</p>
+                    </a>
                 </div>
                 <div class="marathon-item">
                     <a href="https://www.chicagomarathon.com/" target="_blank" title="Chicago Marathon">
@@ -121,7 +83,6 @@
                 </div>
             </div>
         </div>
-    </div> <!-- This closes .container -->
         <div class="city-group">
             <h2 class="city-group-header">Aci Sant'Antonio, Catania, Italy 🇮🇹</h2>
             <p class="city-description">Aci Sant'Antonio — running in Sicily. 西西里岛的跑步体验。</p>
@@ -213,18 +174,17 @@
             <h2 class="city-group-header">State College, Pennsylvania, United States 🇺🇸</h2>
             <p class="city-description">State College — winter training runs in central Pennsylvania. 宾夕法尼亚州中部的冬季训练跑。</p>
             <div class="map-grid">
-                <img src="updated_map_images/475219149216317541.png" alt="Run map for COROS activity 475219149216317541">
-                <img src="updated_map_images/475428238435319813.png" alt="Run map for COROS activity 475428238435319813">
+                <img src="updated_map_images/475219149216317541.png" alt="Run map for February 5, 2026 in State College" data-date="2026-02-05">
+                <img src="updated_map_images/475428238435319813.png" alt="Run map for February 14, 2026 in State College" data-date="2026-02-14">
             </div>
         </div>
         <div class="city-group">
             <h2 class="city-group-header">Gainesville, Florida, United States 🇺🇸</h2>
             <p class="city-description">Gainesville — a spring run in north-central Florida. 佛罗里达州盖恩斯维尔的春日跑步。</p>
             <div class="map-grid">
-                <img src="updated_map_images/476171862886350949.png" alt="Run map for COROS activity 476171862886350949">
+                <img src="updated_map_images/476171862886350949.png" alt="Run map for March 18, 2026 in Gainesville" data-date="2026-03-18">
             </div>
         </div>
-    <div class ="container">
         <div class="city-group">
             <h2 class="city-group-header">Rotterdam, Nederland 🇳🇱</h2>
             <p class="city-description">Rotterdam — the 'Gateway to Europe', home to Europe's largest port. Yongkang's main running base in the Netherlands. 鹿特丹，欧洲最大港口城市，永康在荷兰的主要跑步基地。</p>
@@ -457,15 +417,14 @@
                 <img src="updated_map_images/2026-01-06_16957252920_Afternoon Run.png" alt="Run map for 2026-01-06_16957252920_Afternoon Run.gpx">
                 <img src="updated_map_images/2026-01-08_16979785952_Afternoon Run.png" alt="Run map for 2026-01-08_16979785952_Afternoon Run.gpx">
                 <img src="updated_map_images/2026-01-10_16999317690_Lunch Run.png" alt="Run map for 2026-01-10_16999317690_Lunch Run.gpx">
-                <img src="updated_map_images/476999936083263493.png" alt="Run map for COROS activity 476999936083263493">
-                <img src="updated_map_images/477184103194591431.png" alt="Run map for COROS activity 477184103194591431">
-                <img src="updated_map_images/477324497903452167.png" alt="Run map for COROS activity 477324497903452167">
-                <img src="updated_map_images/477812037076942949.png" alt="Run map for COROS activity 477812037076942949">
-                <img src="updated_map_images/478648428006506796.png" alt="Run map for COROS activity 478648428006506796">
-                <img src="updated_map_images/478787718365610089.png" alt="Run map for COROS activity 478787718365610089">
+                <img src="updated_map_images/476999936083263493.png" alt="Run map for April 23, 2026 in Rotterdam" data-date="2026-04-23">
+                <img src="updated_map_images/477184103194591431.png" alt="Run map for April 30, 2026 in Rotterdam" data-date="2026-04-30">
+                <img src="updated_map_images/477324497903452167.png" alt="Run map for May 7, 2026 in Rotterdam" data-date="2026-05-07">
+                <img src="updated_map_images/477812037076942949.png" alt="Run map for May 28, 2026 in Rotterdam" data-date="2026-05-28">
+                <img src="updated_map_images/478648428006506796.png" alt="Run map for July 3, 2026 in Rotterdam" data-date="2026-07-03">
+                <img src="updated_map_images/478787718365610089.png" alt="Run map for July 9, 2026 in Rotterdam" data-date="2026-07-09">
             </div>
         </div>
-    </div>
         <div class="city-group">
             <h2 class="city-group-header">香港九龍 Kowloon, 中国 🇭🇰</h2>
             <p class="city-description">Hong Kong Kowloon — dense urban running in Asia's most dynamic city. 香港九龙，亚洲最动感都市的城市跑步体验。</p>
@@ -489,7 +448,6 @@
                 <img src="updated_map_images/20240202Outdoor run.png" alt="Run map for 20240202Outdoor run.gpx">
             </div>
         </div>
-    <div class ="container">
         <div class="city-group">
             <h2 class="city-group-header">监利市, 中国 🇨🇳</h2>
             <p class="city-description">Jianli — running by the Yangtze River. 监利，长江之畔的跑步。</p>
@@ -502,7 +460,6 @@
                 <img src="updated_map_images/20230729Outdoor run.png" alt="Run map for 20230729Outdoor run.gpx">
             </div>
         </div>
-    </div>
         <div class="city-group">
             <h2 class="city-group-header">荆门市掇刀区, 中国 🇨🇳</h2>
             <p class="city-description">Jingmen Duodao — runs in the heart of Hubei. 荆门掇刀，湖北中心的跑步。</p>
@@ -517,7 +474,6 @@
                 <img src="updated_map_images//RiHozlpr6qD9.png" alt="Run map for RiHozlpr6qD9.tcx">
             </div>
         </div>
-    <div class ="container">
         <div class="city-group">
             <h2 class="city-group-header">武汉市, 中国 🇨🇳</h2>
             <p class="city-description">武汉 — Yongkang's hometown, running along the Yangtze River banks. 武汉，永康的家乡，沿长江奔跑。</p>
@@ -596,7 +552,6 @@
                 <img src="updated_map_images/j39OfLdPPDwU.png" alt="Run map for j39OfLdPPDwU.tcx">
             </div>
         </div>
-    </div>
         <div class="stats-section">
             <div class="overall-stats">
                 <h2>STATISTICS</h2>
@@ -643,55 +598,43 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebarMenu.appendChild(a);
     });
 
-    // 2. Year Filter Logic
+    // 2. Year filter. Prefer the recorded activity date; filename parsing is only a fallback
+    // for the legacy maps that include a YYYYMMDD or YYYY-MM-DD prefix.
     const cityGroups = document.querySelectorAll('.city-group');
-    cityGroups.forEach(group => {
-        const images = group.querySelectorAll('.map-grid img');
-        images.forEach(img => {
-            const src = img.getAttribute('src');
-            const filename = src.split('/').pop();
-            let year = "Unknown";
-            const match = filename.match(/^(\d{4})/);
-            if (match && match[0] !== "1000") { // ignore marathon logos
-                year = match[1];
-            } else if (filename.startsWith('cawRlLU') || filename.match(/^[a-zA-Z0-9_-]{10,}\.tcx/i) || filename.match(/^[a-zA-Z0-9_-]{10,}\.png/i)) {
-               year = "Unknown";
-            }
-            img.setAttribute('data-year', year);
-        });
+    const routeImages = document.querySelectorAll('.map-grid img');
+    routeImages.forEach(img => {
+        const filename = decodeURIComponent(img.getAttribute('src').split('/').pop());
+        const recordedDate = img.dataset.date;
+        const dateMatch = filename.match(/^(20\d{2})[-]?(\d{2})[-]?(\d{2})/);
+        const date = recordedDate || (dateMatch ? `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}` : '');
+        img.dataset.year = date ? date.slice(0, 4) : 'Unknown';
+        if (date) img.dataset.date = date;
     });
 
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterStatus = document.getElementById('filter-status');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const selectedYear = btn.getAttribute('data-filter');
 
-            document.querySelectorAll('.map-grid img').forEach(img => {
-                // Keep marathon logos always visible
-                if (img.src.includes('1000')) {
-                    return;
-                }
-
-                if (selectedYear === 'All' || img.getAttribute('data-year') === selectedYear) {
-                    img.style.display = '';
-                } else {
-                    img.style.display = 'none';
-                }
+            let visibleRouteCount = 0;
+            routeImages.forEach(img => {
+                const visible = selectedYear === 'All' || img.dataset.year === selectedYear;
+                img.hidden = !visible;
+                if (visible) visibleRouteCount += 1;
             });
 
             cityGroups.forEach(group => {
-                const visibleImages = group.querySelectorAll('.map-grid img[style="display: ;"], .map-grid img:not([style*="display: none"])');
+                const visibleImages = group.querySelectorAll('.map-grid img:not([hidden])');
                 const link = document.querySelector(`.sidebar a[href="#${group.id}"]`);
-                if (visibleImages.length === 0) {
-                    group.style.display = 'none';
-                    if(link) link.style.display = 'none';
-                } else {
-                    group.style.display = '';
-                    if(link) link.style.display = '';
-                }
+                group.hidden = visibleImages.length === 0;
+                if(link) link.hidden = visibleImages.length === 0;
             });
+            filterStatus.textContent = selectedYear === 'All'
+                ? `Showing all ${visibleRouteCount} mapped routes`
+                : `Showing ${visibleRouteCount} mapped routes from ${selectedYear}`;
         });
     });
 
@@ -719,6 +662,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
             sidebar.classList.toggle('open');
+            mobileToggle.setAttribute('aria-expanded', sidebar.classList.contains('open'));
         });
     }
     const sidebarLinks = document.getElementById('sidebar-menu');
@@ -739,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.style.display = "block";
             lightboxImg.src = this.src;
             let filename = decodeURIComponent(this.src.split('/').pop().replace(/\.[^/.]+$/, ""));
-            lightboxCaption.textContent = filename;
+            lightboxCaption.textContent = this.dataset.date ? `${this.dataset.date} · ${filename}` : filename;
         });
     });
 
