@@ -1,10 +1,30 @@
 #!/usr/bin/env python3
+import argparse
 import os
 import gpxpy
 import gpxpy.gpx
 import json
 from math import radians, sin, cos, sqrt, atan2
+from pathlib import Path
 import xml.etree.ElementTree as ET
+
+
+REPOSITORY_ROOT = Path(__file__).resolve().parent
+
+
+def default_input_directory():
+    """Return the private source directory without committing a local path."""
+    configured_directory = os.environ.get("RUNNING_DATA_DIR")
+    if configured_directory:
+        return Path(configured_directory).expanduser()
+    return REPOSITORY_ROOT / "gpx_data_private"
+
+
+def default_derived_directory(input_directory):
+    configured_directory = os.environ.get("RUNNING_DERIVED_DIR")
+    if configured_directory:
+        return Path(configured_directory).expanduser()
+    return Path(input_directory).resolve().parent / "derived"
 
 def calculate_distance(lat1, lon1, lat2, lon2):
     # Haversine formula to calculate distance between two lat/lon points
@@ -125,22 +145,53 @@ def process_gpx_files(gpx_dir):
 
     return all_runs_data, overall_stats
 
-if __name__ == "__main__":
-    gpx_directory = "/Users/johanyang/Github Repo/running-journey/gpx_data"
-    output_data_file = "/Users/johanyang/Github Repo/running-journey/processed_gpx_data.json"
-    output_stats_file = "/Users/johanyang/Github Repo/running-journey/overall_running_stats.json"
+def main():
+    parser = argparse.ArgumentParser(
+        description="Extract running data from private GPX and TCX source files."
+    )
+    parser.add_argument(
+        "--input-dir",
+        type=Path,
+        default=default_input_directory(),
+        help="Private directory containing GPX and TCX files (default: RUNNING_DATA_DIR or gpx_data_private).",
+    )
+    parser.add_argument(
+        "--tracks-output",
+        type=Path,
+        help="Private JSON output containing route coordinates (default: OneDrive derived directory).",
+    )
+    parser.add_argument(
+        "--stats-output",
+        type=Path,
+        default=REPOSITORY_ROOT / "overall_running_stats.json",
+        help="Public aggregate-statistics JSON output.",
+    )
+    args = parser.parse_args()
 
-    runs_data, stats_data = process_gpx_files(gpx_directory)
+    input_directory = args.input_dir.expanduser()
+    if not input_directory.is_dir():
+        parser.error(f"Input directory does not exist: {input_directory}")
 
-    with open(output_data_file, 'w') as f_data:
+    derived_directory = default_derived_directory(input_directory)
+    tracks_output = args.tracks_output or derived_directory / "processed_gpx_data.json"
+    stats_output = args.stats_output.expanduser()
+    tracks_output.parent.mkdir(parents=True, exist_ok=True)
+    stats_output.parent.mkdir(parents=True, exist_ok=True)
+
+    runs_data, stats_data = process_gpx_files(input_directory)
+
+    with tracks_output.open("w", encoding="utf-8") as f_data:
         json.dump(runs_data, f_data, indent=4)
-    
-    with open(output_stats_file, 'w') as f_stats:
+
+    with stats_output.open("w", encoding="utf-8") as f_stats:
         json.dump(stats_data, f_stats, indent=4)
 
     print(f"Processed {stats_data['total_runs']} GPX/TCX files.")
-    print(f"Individual run data saved to {output_data_file}")
-    print(f"Overall statistics saved to {output_stats_file}")
+    print(f"Private route data saved to {tracks_output}")
+    print(f"Public aggregate statistics saved to {stats_output}")
     if stats_data['corrupted_files']:
         print(f"Corrupted files: {stats_data['corrupted_files']}")
 
+
+if __name__ == "__main__":
+    main()

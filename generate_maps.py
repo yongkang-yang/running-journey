@@ -1,7 +1,23 @@
 #!/usr/bin/env python3
+import argparse
 import json
-import matplotlib.pyplot as plt
 import os
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+
+
+REPOSITORY_ROOT = Path(__file__).resolve().parent
+
+
+def default_data_file():
+    configured_directory = os.environ.get("RUNNING_DERIVED_DIR")
+    if configured_directory:
+        return Path(configured_directory).expanduser() / "processed_gpx_data.json"
+
+    configured_input = os.environ.get("RUNNING_DATA_DIR")
+    input_directory = Path(configured_input).expanduser() if configured_input else REPOSITORY_ROOT / "gpx_data_private"
+    return input_directory.resolve().parent / "derived" / "processed_gpx_data.json"
 
 def generate_map_image(track_points, output_path, line_color='white', bg_color='black'):
     if not track_points:
@@ -34,27 +50,40 @@ def generate_map_image(track_points, output_path, line_color='white', bg_color='
     plt.close(fig)
     # print(f"Saved map image to {output_path}")
 
-if __name__ == "__main__":
-    data_file = "/Users/johanyang/Github Repo/running-journey/processed_gpx_data.json"
-    output_dir = "/Users/johanyang/Github Repo/running-journey/updated_map_images"
+def main():
+    parser = argparse.ArgumentParser(
+        description="Generate public route-map images from private processed route data."
+    )
+    parser.add_argument(
+        "--data-file",
+        type=Path,
+        default=default_data_file(),
+        help="Private processed route JSON (default: RUNNING_DERIVED_DIR or OneDrive derived directory).",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=REPOSITORY_ROOT / "updated_map_images",
+        help="Directory for public map images.",
+    )
+    args = parser.parse_args()
 
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    data_file = args.data_file.expanduser()
+    output_dir = args.output_dir.expanduser()
+    if not data_file.is_file():
+        parser.error(f"Processed route data does not exist: {data_file}")
+    output_dir.mkdir(parents=True, exist_ok=True)
 
-    with open(data_file, 'r') as f:
+    with data_file.open("r", encoding="utf-8") as f:
         all_runs_data = json.load(f)
 
     image_count = 0
     for run_data in all_runs_data:
         filename_base = os.path.splitext(run_data["filename"])[0]
-        output_image_path = os.path.join(output_dir, f"{filename_base}.png")
-        
-        # Assuming the first track contains the main route points
-        # And track_points is a list of (lat, lon, ele) tuples
+        output_image_path = output_dir / f"{filename_base}.png"
+
         if run_data["tracks"] and run_data["tracks"][0]:
-            # The structure from process_gpx.py is run_data["tracks"] = [[(lat, lon, ele), ...]]
-            # So we need run_data["tracks"][0] to get the list of points for the first track
-            points_for_map = run_data["tracks"][0] 
+            points_for_map = run_data["tracks"][0]
             generate_map_image(points_for_map, output_image_path, line_color='white')
             image_count += 1
         else:
@@ -62,3 +91,6 @@ if __name__ == "__main__":
 
     print(f"Generated {image_count} map images in {output_dir}")
 
+
+if __name__ == "__main__":
+    main()

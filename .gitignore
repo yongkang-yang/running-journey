@@ -1,0 +1,10 @@
+# Private raw running data and the WSL-only link to the OneDrive data source.
+gpx_data/
+gpx_data_private
+
+# Contains full route coordinates; keep this intermediate output outside the repository.
+processed_gpx_data.json
+
+# Local Python environment for the maintenance scripts.
+.venv/
+__pycache__/

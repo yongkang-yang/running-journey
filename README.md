@@ -50,6 +50,25 @@ Yongkang-running-journey/
 
 4. **Website Generation**: The HTML is dynamically generated to group activities by location and display overall statistics.
 
+## Private data workflow
+
+Raw GPX and TCX exports are intentionally kept out of this repository. On the primary WSL machine they live in OneDrive at:
+
+```
+/mnt/c/Users/ykyan/OneDrive/Life_YONGKANG/WIKI-YANG/data/running-journey/raw-tracks
+```
+
+`gpx_data_private` is a local-only symlink to that directory. It is ignored by Git. To refresh the site after adding new exports, install the dependencies and run:
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python process_gpx.py
+.venv/bin/python generate_maps.py
+```
+
+The first command writes complete route coordinates only to the adjacent OneDrive `derived/` folder. The second command writes public route-map images to `updated_map_images/`; review those images and update `index.html` before committing a deployment.
+
 
 ## License
 

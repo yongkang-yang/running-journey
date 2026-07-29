@@ -2,6 +2,7 @@
 import gpxpy
 import os
 from collections import defaultdict
+from pathlib import Path
 
 # Function to get approximate location from first point
 def get_location_from_gpx(filepath):
@@ -83,7 +84,10 @@ new_files = [
     '2026-01-10_16999317690_Lunch Run.gpx',
 ]
 
-gpx_dir = 'gpx_data'
+gpx_dir = os.environ.get(
+    "RUNNING_DATA_DIR",
+    str(Path(__file__).resolve().parent / "gpx_data_private"),
+)
 location_groups = defaultdict(list)
 
 for filename in new_files:
