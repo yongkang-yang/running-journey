@@ -125,15 +125,15 @@ body {
     display: block;
     width: 100%;
     aspect-ratio: 1;
-    border: 1px solid #3e4b45;
+    border: 1px solid transparent;
     border-radius: .7rem;
     /* Route exports use transparent pixels and light route strokes. */
-    background: #050907;
+    background: var(--canvas);
     cursor: zoom-in;
     object-fit: contain;
     transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
-.map-grid img:hover { border-color: var(--accent); box-shadow: 0 12px 28px rgb(0 0 0 / 42%); transform: translateY(-3px); }
+.map-grid img:hover { box-shadow: 0 12px 28px rgb(0 0 0 / 42%); transform: translateY(-3px); }
 
 .stats-section {
     display: grid;
