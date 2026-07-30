@@ -1,11 +1,11 @@
 :root {
-    --canvas: #f5f2eb;
-    --ink: #18201d;
-    --muted: #66706a;
-    --line: #d9d8d0;
-    --surface: #fffefa;
-    --accent: #e85224;
-    --accent-dark: #bf3c18;
+    --canvas: #0d1210;
+    --ink: #f1f3ed;
+    --muted: #aeb9b1;
+    --line: #2b3731;
+    --surface: #18211d;
+    --accent: #ff6538;
+    --accent-dark: #ff9b7b;
     --sidebar-width: 250px;
 }
 
@@ -101,7 +101,7 @@ body {
     text-decoration: none;
     transition: box-shadow .18s ease, transform .18s ease;
 }
-.marathon-item a:hover { box-shadow: 0 12px 25px rgb(24 32 29 / 10%); transform: translateY(-3px); }
+.marathon-item a:hover { box-shadow: 0 12px 25px rgb(0 0 0 / 28%); transform: translateY(-3px); }
 .marathon-item img { display: block; width: 100%; height: 72px; object-fit: contain; }
 .marathon-item p { margin: .45rem 0 0; color: var(--muted); font-size: .75rem; line-height: 1.3; }
 
@@ -128,12 +128,12 @@ body {
     border: 1px solid #3e4b45;
     border-radius: .7rem;
     /* Route exports use transparent pixels and light route strokes. */
-    background: #17211d;
+    background: #050907;
     cursor: zoom-in;
     object-fit: contain;
     transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
 }
-.map-grid img:hover { border-color: var(--accent); box-shadow: 0 12px 28px rgb(24 32 29 / 20%); transform: translateY(-3px); }
+.map-grid img:hover { border-color: var(--accent); box-shadow: 0 12px 28px rgb(0 0 0 / 42%); transform: translateY(-3px); }
 
 .stats-section {
     display: grid;
@@ -153,7 +153,7 @@ body {
     width: var(--sidebar-width);
     padding: 2rem 0;
     border-right: 1px solid var(--line);
-    background: #eeece5;
+    background: #141b18;
     overflow-y: auto;
     z-index: 20;
 }
@@ -175,7 +175,7 @@ body {
     text-decoration: none;
     transition: background .15s ease, border-color .15s ease, color .15s ease;
 }
-.sidebar a:hover, .sidebar a.active { border-left-color: var(--accent); background: rgb(255 255 255 / 55%); color: var(--ink); }
+.sidebar a:hover, .sidebar a.active { border-left-color: var(--accent); background: rgb(255 255 255 / 7%); color: var(--ink); }
 
 .mobile-nav-toggle {
     display: none;
