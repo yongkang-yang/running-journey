@@ -6,7 +6,7 @@
     --surface: #18211d;
     --accent: #ff6538;
     --accent-dark: #ff9b7b;
-    --sidebar-width: 250px;
+    --sidebar-width: 280px;
 }
 
 * { box-sizing: border-box; }
@@ -167,10 +167,10 @@ body {
 }
 .sidebar a {
     display: block;
-    padding: .55rem 1.5rem;
+    padding: .5rem 1.5rem;
     border-left: 3px solid transparent;
     color: var(--muted);
-    font-size: .84rem;
+    font-size: .78rem;
     line-height: 1.25;
     text-decoration: none;
     transition: background .15s ease, border-color .15s ease, color .15s ease;

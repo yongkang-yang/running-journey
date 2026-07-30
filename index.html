@@ -583,6 +583,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Sidebar Generation
     const sidebarMenu = document.getElementById('sidebar-menu');
+    const sidebarLabels = {
+        "Aci Sant'Antonio, Catania, Italy 🇮🇹": "Aci Sant'Antonio, Italy 🇮🇹",
+        "Benalmádena, Málaga, Spain 🇪🇸": "Benalmádena, Spain 🇪🇸",
+        "Breda, Nederland 🇳🇱": "Breda, Netherlands 🇳🇱",
+        "Copenhagen, Denmark 🇩🇰": "Copenhagen, Denmark 🇩🇰",
+        "City of New York, United States 🇺🇸": "New York City, USA 🇺🇸",
+        "Leiden, Nederland 🇳🇱": "Leiden, Netherlands 🇳🇱",
+        "Amstelveen, Nederland 🇳🇱": "Amstelveen, Netherlands 🇳🇱",
+        "State College, Pennsylvania, United States 🇺🇸": "State College, PA, USA 🇺🇸",
+        "Gainesville, Florida, United States 🇺🇸": "Gainesville, FL, USA 🇺🇸",
+        "Rotterdam, Nederland 🇳🇱": "Rotterdam, Netherlands 🇳🇱",
+        "香港九龍 Kowloon, 中国 🇭🇰": "Hong Kong, China (九龙) 🇭🇰",
+        "安吉县, 中国 🇨🇳": "Anji, China (安吉) 🇨🇳",
+        "上海浦东新区, 中国 🇨🇳": "Pudong, China (浦东) 🇨🇳",
+        "监利市, 中国 🇨🇳": "Jianli, China (监利) 🇨🇳",
+        "荆门市掇刀区, 中国 🇨🇳": "Duodao, China (掇刀) 🇨🇳",
+        "宜昌市, 中国 🇨🇳": "Yichang, China (宜昌) 🇨🇳",
+        "武汉市, 中国 🇨🇳": "Wuhan, China (武汉) 🇨🇳"
+    };
     document.querySelectorAll('.city-group').forEach(group => {
         const header = group.querySelector('.city-group-header');
         if(!header) return;
@@ -594,7 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const a = document.createElement('a');
         a.href = `#${group.id}`;
-        a.textContent = header.textContent;
+        a.textContent = sidebarLabels[header.textContent] || header.textContent;
         sidebarMenu.appendChild(a);
     });
 
