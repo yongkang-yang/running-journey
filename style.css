@@ -105,6 +105,65 @@ body {
 .marathon-item img { display: block; width: 100%; height: 72px; object-fit: contain; }
 .marathon-item p { margin: .45rem 0 0; color: var(--muted); font-size: .75rem; line-height: 1.3; }
 
+.world-map-section { padding: 3rem 0 1rem; }
+.world-map-section h2 {
+    margin: 0 0 .4rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -.03em;
+}
+.world-map-caption { margin: 0 0 1.5rem; color: var(--muted); font-size: .9rem; }
+.world-map-wrap {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--surface);
+    overflow: hidden;
+}
+.world-map { display: block; width: 100%; height: auto; }
+.world-map-land { fill: #26332c; stroke: var(--line); stroke-width: .6; }
+.world-map-marker { cursor: pointer; }
+.world-map-marker circle {
+    fill: var(--accent);
+    stroke: var(--surface);
+    stroke-width: 1.2;
+    transition: r .15s ease, fill .15s ease;
+}
+.world-map-marker:hover circle, .world-map-marker:focus-visible circle,
+.world-map-marker.active circle { fill: var(--accent-dark); }
+.world-map-marker text {
+    fill: var(--surface);
+    font-size: 6px;
+    font-weight: 800;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+.world-map-marker:focus-visible { outline: none; }
+.world-map-marker:focus-visible circle { stroke: var(--ink); }
+
+.world-map-tooltip {
+    position: absolute;
+    z-index: 5;
+    min-width: 160px;
+    max-width: 220px;
+    padding: .6rem .3rem;
+    border: 1px solid var(--line);
+    border-radius: .6rem;
+    background: #141b18;
+    box-shadow: 0 12px 25px rgb(0 0 0 / 35%);
+    font-size: .82rem;
+}
+.world-map-tooltip[hidden] { display: none; }
+.world-map-tooltip a {
+    display: block;
+    padding: .35rem .7rem;
+    color: var(--ink);
+    text-decoration: none;
+}
+.world-map-tooltip a:hover { color: var(--accent-dark); }
+
 .city-group { margin-top: 3.25rem; scroll-margin-top: 1rem; }
 .city-group-header {
     margin: 0;
