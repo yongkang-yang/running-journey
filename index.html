@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="mobile-nav-toggle" id="mobile-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
-    <nav class="sidebar" id="sidebar">
+    <button class="nav-toggle" id="mobile-toggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open cities menu">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M2 4.5h12M2 11.5h12" />
+        </svg>
+        Cities
+    </button>
+    <div class="scrim" id="scrim"></div>
+    <nav class="sidebar" id="sidebar" aria-label="Cities">
         <div class="sidebar-header">Cities</div>
         <div id="sidebar-menu"></div>
     </nav>
@@ -707,20 +713,30 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(group);
     });
 
-    // 4. Mobile Sidebar Toggle
+    // 4. Cities Drawer Toggle
     const mobileToggle = document.getElementById('mobile-toggle');
     const sidebar = document.getElementById('sidebar');
+    const scrim = document.getElementById('scrim');
+    const setDrawer = (open) => {
+        sidebar.classList.toggle('open', open);
+        scrim.classList.toggle('visible', open);
+        mobileToggle.setAttribute('aria-expanded', open);
+        mobileToggle.setAttribute('aria-label', open ? 'Close cities menu' : 'Open cities menu');
+    };
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
-            mobileToggle.setAttribute('aria-expanded', sidebar.classList.contains('open'));
+            setDrawer(!sidebar.classList.contains('open'));
         });
+    }
+    if (scrim) {
+        scrim.addEventListener('click', () => setDrawer(false));
     }
     const sidebarLinks = document.getElementById('sidebar-menu');
     sidebarLinks.addEventListener('click', (e) => {
-        if(e.target.tagName === 'A' && window.innerWidth <= 768) {
-            sidebar.classList.remove('open');
-        }
+        if (e.target.tagName === 'A') setDrawer(false);
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) setDrawer(false);
     });
 
     // 5. Lightbox

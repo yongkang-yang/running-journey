@@ -10,7 +10,7 @@
     --accent: #2997ff;
     --accent-strong: #0071e3;
     --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
-    --sidebar-width: 264px;
+    --ease-sheet: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 * { box-sizing: border-box; }
@@ -19,7 +19,7 @@ html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
-    padding: 0 48px 56px calc(var(--sidebar-width) + 56px);
+    padding: 0 48px 56px;
     background: var(--bg);
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
@@ -55,8 +55,22 @@ body {
 /* ---------- Hero ---------- */
 
 .main-header {
+    position: relative;
     padding: clamp(5.5rem, 12vw, 10rem) 0 4.5rem;
     text-align: center;
+}
+
+/* Decorative route-trace mosaic behind the hero copy. */
+.main-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: url("assets/hero-routes.png") center top / cover no-repeat;
+    pointer-events: none;
 }
 
 .eyebrow {
@@ -408,19 +422,30 @@ body {
     font-variant-numeric: tabular-nums;
 }
 
-/* ---------- Sidebar ---------- */
+/* ---------- Cities drawer (click to open) ---------- */
 
 .sidebar {
     position: fixed;
     inset: 0 auto 0 0;
-    width: var(--sidebar-width);
-    padding: 1.6rem 0.7rem;
+    width: min(84vw, 320px);
+    padding: 4rem 0.85rem 2rem;
     border-right: 1px solid var(--hairline);
-    background: rgb(18 18 20 / 72%);
-    backdrop-filter: saturate(180%) blur(22px);
-    -webkit-backdrop-filter: saturate(180%) blur(22px);
+    border-radius: 0 28px 28px 0;
+    background: rgb(22 22 24 / 76%);
+    backdrop-filter: saturate(180%) blur(28px);
+    -webkit-backdrop-filter: saturate(180%) blur(28px);
+    box-shadow: 40px 0 90px rgb(0 0 0 / 55%);
     overflow-y: auto;
-    z-index: 20;
+    visibility: hidden;
+    transform: translateX(-104%);
+    transition: transform 0.42s var(--ease-sheet), visibility 0s linear 0.42s;
+    z-index: 50;
+}
+
+.sidebar.open {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.42s var(--ease-sheet), visibility 0s linear 0s;
 }
 
 .sidebar-header {
@@ -435,10 +460,10 @@ body {
 .sidebar a {
     display: block;
     margin: 1px 0;
-    padding: 0.44rem 0.9rem;
-    border-radius: 9px;
+    padding: 0.5rem 0.9rem;
+    border-radius: 10px;
     color: rgb(245 245 247 / 72%);
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     font-weight: 450;
     line-height: 1.3;
     text-decoration: none;
@@ -453,24 +478,48 @@ body {
     font-weight: 550;
 }
 
-.mobile-nav-toggle {
-    display: none;
+.scrim {
     position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 30;
-    padding: 0.55rem 1.1rem;
+    inset: 0;
+    background: rgb(0 0 0 / 48%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.32s var(--ease-apple);
+    z-index: 45;
+}
+
+.scrim.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    position: fixed;
+    top: 1.1rem;
+    left: 1.1rem;
+    z-index: 55;
+    padding: 0.6rem 1.15rem;
     border: 1px solid var(--hairline);
     border-radius: 999px;
     background: rgb(29 29 31 / 72%);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
     color: var(--text-primary);
     cursor: pointer;
     font: inherit;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s var(--ease-apple);
 }
+
+.nav-toggle:hover { background: rgb(44 44 46 / 80%); }
+.nav-toggle:active { transform: scale(0.96); }
+
+.nav-toggle svg { width: 15px; height: 15px; flex: none; }
 
 /* ---------- Lightbox ---------- */
 
@@ -550,22 +599,14 @@ footer p { margin: 0; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1050px) {
-    :root { --sidebar-width: 220px; }
-    body { padding-left: calc(var(--sidebar-width) + 36px); padding-right: 36px; }
+    body { padding: 0 36px 48px; }
     .marathon-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .stats-section { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
     body { padding: 0 20px 36px; }
-    .sidebar {
-        width: min(82vw, 290px);
-        transform: translateX(-105%);
-        transition: transform 0.28s var(--ease-apple);
-        box-shadow: 24px 0 48px rgb(0 0 0 / 50%);
-    }
-    .sidebar.open { transform: translateX(0); }
-    .mobile-nav-toggle { display: block; }
+    .nav-toggle { top: 0.9rem; left: 0.9rem; }
     .main-header { padding-top: 6.5rem; }
     .marathon-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .map-grid { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 0.55rem; }
