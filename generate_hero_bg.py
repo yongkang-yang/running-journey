@@ -1,25 +1,87 @@
-"""Generate the hero background mosaic from the exported route maps.
+"""Generate the hero background mosaic from a curated set of route maps.
 
-Composites the white-on-transparent route PNGs into a single decorative
-image with baked-in edge fades, so the hero text stays legible on top.
+Composites hand-picked white-on-transparent route PNGs into a single
+decorative image: three size tiers scattered organically (rejection
+sampling + slight rotation), each route drawn twice for a soft glow,
+with baked-in edge fades so the hero text stays legible on top.
 """
 
 import math
 import random
 from pathlib import Path
 
-from PIL import Image, ImageChops
+from PIL import Image, ImageChops, ImageFilter
 
 SRC_DIR = Path("updated_map_images")
 OUT_PATH = Path("assets/hero-routes.png")
 
-CANVAS_W, CANVAS_H = 2400, 1500
-CELL = 330          # grid cell size; tiles are contained inside with breathing room
-TILE_BOX = 252      # max tile dimension
-JITTER = 16         # random offset so the grid feels organic
-FADE_START = 0.40   # vertical fade begins at this fraction of the height
-FADE_END = 0.86     # fully transparent from here down
-EDGE_FADE = 0.07    # horizontal fade width (fraction of width, each side)
+CANVAS_W, CANVAS_H = 2400, 1620
+
+# Indices into sorted(updated_map_images/*.png) — hand-picked traces:
+# no stadium ovals, favouring long meandering lines, zigzags and a few
+# distinctive shapes.
+FEATURE = [111, 150, 263, 303]                                   # hero-sized
+MEDIUM  = [2, 63, 83, 102, 106, 113, 176, 204,                   # mid detail
+           212, 230]
+SMALL   = [5, 21, 30, 69, 90, 129, 145, 160]                     # faint depth
+ACCENT  = [11, 16, 39, 60, 120, 148, 262, 300]                  # zigzag energy
+SHAPE   = [19, 44, 78, 140, 173, 241]                            # silhouettes
+
+TIERS = [
+    # (indices, tile box px, alpha range, rotation range)
+    (FEATURE, 460, (0.78, 0.88), (-6, 6)),
+    (MEDIUM, 290, (0.52, 0.68), (-9, 9)),
+    (ACCENT, 255, (0.50, 0.64), (-9, 9)),
+    (SHAPE, 235, (0.46, 0.60), (-8, 8)),
+    (SMALL, 180, (0.38, 0.52), (-10, 10)),
+]
+
+MIN_GAP = 30          # minimum spacing between tile boxes
+EDGE_MARGIN = 60
+FADE_START = 0.58     # vertical fade begins at this fraction of the height
+FADE_END = 0.98       # fully transparent from here down
+EDGE_FADE = 0.06      # horizontal fade width (fraction of width, each side)
+
+
+def load_tile(path: Path, box: int, alpha_mul: float, angle: int) -> Image.Image:
+    tile = Image.open(path).convert("RGBA")
+    scale = box / max(tile.size)
+    if scale < 1:
+        tile = tile.resize(
+            (max(1, round(tile.width * scale)), max(1, round(tile.height * scale))),
+            Image.LANCZOS,
+        )
+    elif scale > 1.4:
+        tile = tile.resize(
+            (min(tile.width * 2, round(tile.width * scale)),
+             min(tile.height * 2, round(tile.height * scale))),
+            Image.LANCZOS,
+        )
+    if angle:
+        tile = tile.rotate(angle, expand=True, resample=Image.BICUBIC)
+    alpha = tile.getchannel("A").point(lambda v: int(v * alpha_mul))
+    tile.putalpha(alpha)
+    return tile
+
+
+def scatter(tiles_info) -> list[tuple[Image.Image, tuple[int, int]]]:
+    """Rejection-sample non-overlapping positions, largest tiles first."""
+    placed = []
+    rng = random.Random(7)
+    dropped = 0
+    for tile, gap in tiles_info:
+        for _ in range(900):
+            x = rng.randint(EDGE_MARGIN, CANVAS_W - EDGE_MARGIN - tile.width)
+            y = rng.randint(20, CANVAS_H - 40 - tile.height)
+            box = (x - gap, y - gap, x + tile.width + gap, y + tile.height + gap)
+            if all(box[0] >= b[2] or box[2] <= b[0] or box[1] >= b[3] or box[3] <= b[1]
+                   for b in placed):
+                placed.append(box)
+                yield tile, (x, y)
+                break
+        else:
+            dropped += 1
+    print(f"placed {len(tiles_info) - dropped}/{len(tiles_info)}")
 
 
 def fade_mask(width: int, height: int) -> Image.Image:
@@ -36,9 +98,7 @@ def fade_mask(width: int, height: int) -> Image.Image:
     vertical = vertical.point(v_factor)
 
     horizontal = (
-        Image.linear_gradient("L")
-        .rotate(90, expand=True)
-        .resize((width, height))
+        Image.linear_gradient("L").rotate(90, expand=True).resize((width, height))
     )
     edge = int(EDGE_FADE * 255)
 
@@ -54,32 +114,29 @@ def fade_mask(width: int, height: int) -> Image.Image:
 
 
 def main() -> None:
-    random.seed(11)
     files = sorted(SRC_DIR.glob("*.png"))
-    if not files:
-        raise SystemExit(f"no route images found in {SRC_DIR}")
-    random.shuffle(files)
+    rng = random.Random(11)
+
+    tiles_info = []
+    for indices, box, (a_lo, a_hi), (r_lo, r_hi) in TIERS:
+        for idx in indices:
+            angle = rng.randint(r_lo, r_hi) if r_lo or r_hi else 0
+            tile = load_tile(files[idx], box, rng.uniform(a_lo, a_hi), angle)
+            tiles_info.append((tile, MIN_GAP))
 
     canvas = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
-    cols = math.ceil(CANVAS_W / CELL)
-    rows = math.ceil(CANVAS_H / CELL)
 
-    k = 0
-    for row in range(rows):
-        for col in range(cols):
-            path = files[k % len(files)]
-            k += 1
-            tile = Image.open(path).convert("RGBA")
-            tile.thumbnail((TILE_BOX, TILE_BOX))
-            alpha = tile.getchannel("A").point(
-                lambda v: int(v * random.uniform(0.45, 0.8))
-            )
-            tile.putalpha(alpha)
-            x = col * CELL + (CELL - tile.width) // 2 + random.randint(-JITTER, JITTER)
-            y = row * CELL + (CELL - tile.height) // 2 + random.randint(-JITTER, JITTER)
-            canvas.alpha_composite(tile, (max(x, 0), max(y, 0)))
+    # Soft glow pass underneath, then the sharp pass on top.
+    glow = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
+    for tile, pos in scatter(tiles_info):
+        soft = tile.filter(ImageFilter.GaussianBlur(7)).point(lambda v: min(255, int(v * 1.3)))
+        glow.alpha_composite(soft, pos)
+        canvas.alpha_composite(tile, pos)
 
-    canvas.putalpha(ImageChops.multiply(canvas.getchannel("A"), fade_mask(CANVAS_W, CANVAS_H)))
+    canvas.alpha_composite(glow.filter(ImageFilter.GaussianBlur(2)))
+    canvas.putalpha(
+        ImageChops.multiply(canvas.getchannel("A"), fade_mask(CANVAS_W, CANVAS_H))
+    )
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(OUT_PATH, optimize=True)
     print(f"wrote {OUT_PATH} ({OUT_PATH.stat().st_size / 1024:.0f} KB)")
