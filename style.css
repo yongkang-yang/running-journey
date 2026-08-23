@@ -87,15 +87,7 @@ body {
     font-weight: 700;
     letter-spacing: -0.025em;
     line-height: 1.04;
-}
-
-.main-header h1 em {
-    font-style: normal;
-    background: linear-gradient(94deg, var(--accent) 8%, #64d2ff 60%, #bf5af2 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    text-shadow: 0 4px 32px rgb(0 0 0 / 65%);
 }
 
 .hero-copy {
@@ -294,6 +286,26 @@ body {
 }
 
 .world-map-tooltip a:hover { background: rgb(255 255 255 / 10%); }
+
+/* ---------- Year view ---------- */
+
+.year-view { margin-top: 3.25rem; scroll-margin-top: 1.5rem; }
+
+.year-view-title {
+    margin: 0 0 1.4rem;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.year-empty {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+body.year-filtered #sidebar-menu { display: none; }
 
 /* ---------- City groups ---------- */
 
