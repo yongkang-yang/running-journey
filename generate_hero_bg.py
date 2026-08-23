@@ -42,6 +42,12 @@ FADE_START = 0.58     # vertical fade begins at this fraction of the height
 FADE_END = 0.98       # fully transparent from here down
 EDGE_FADE = 0.06      # horizontal fade width (fraction of width, each side)
 
+# Elliptical "keep-clear" zone where the hero headline sits: traces are
+# heavily dimmed inside it and blend back to full strength around it.
+TEXT_CENTER = (0.50, 0.40)   # fractions of width / height
+TEXT_RADII = (0.38, 0.32)    # ellipse radii as fractions of width / height
+TEXT_MIN = 0.14              # alpha multiplier at the ellipse centre
+
 
 def load_tile(path: Path, box: int, alpha_mul: float, angle: int) -> Image.Image:
     tile = Image.open(path).convert("RGBA")
@@ -82,6 +88,20 @@ def scatter(tiles_info) -> list[tuple[Image.Image, tuple[int, int]]]:
         else:
             dropped += 1
     print(f"placed {len(tiles_info) - dropped}/{len(tiles_info)}")
+
+
+def text_zone_mask(width: int, height: int) -> Image.Image:
+    """Smooth elliptical multiplier that clears the headline area."""
+    import numpy as np
+
+    yy, xx = np.mgrid[0:height, 0:width].astype(float)
+    dx = (xx - TEXT_CENTER[0] * width) / (TEXT_RADII[0] * width)
+    dy = (yy - TEXT_CENTER[1] * height) / (TEXT_RADII[1] * height)
+    d = np.hypot(dx, dy)
+    # 0 at the centre -> 1 beyond the soft falloff ring
+    falloff = np.clip((d - 0.55) / 0.9, 0.0, 1.0)
+    values = (TEXT_MIN + (1.0 - TEXT_MIN) * falloff) * 255.0
+    return Image.fromarray(values.astype("uint8"), "L")
 
 
 def fade_mask(width: int, height: int) -> Image.Image:
@@ -134,9 +154,10 @@ def main() -> None:
         canvas.alpha_composite(tile, pos)
 
     canvas.alpha_composite(glow.filter(ImageFilter.GaussianBlur(2)))
-    canvas.putalpha(
-        ImageChops.multiply(canvas.getchannel("A"), fade_mask(CANVAS_W, CANVAS_H))
+    combined = ImageChops.multiply(
+        fade_mask(CANVAS_W, CANVAS_H), text_zone_mask(CANVAS_W, CANVAS_H)
     )
+    canvas.putalpha(ImageChops.multiply(canvas.getchannel("A"), combined))
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(OUT_PATH, optimize=True)
     print(f"wrote {OUT_PATH} ({OUT_PATH.stat().st_size / 1024:.0f} KB)")

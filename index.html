@@ -28,7 +28,7 @@
     <div class="container">
         <header class="main-header">
             <p class="eyebrow">Personal running atlas</p>
-            <h1>Run the world,<br><em>one route at a time.</em></h1>
+            <h1>Run the World</h1>
             <p class="hero-copy">345 recorded runs across cities, seasons, and finish lines. Explore the routes by year or place.</p>
             <div class="year-filter" aria-label="Filter running routes by year">
                 <button class="filter-btn active" data-filter="All">All</button>
@@ -101,6 +101,11 @@
                 </svg>
                 <div class="world-map-tooltip" id="world-map-tooltip" hidden></div>
             </div>
+        </div>
+        <div class="year-view" id="year-view" hidden>
+            <h2 class="year-view-title" id="year-view-title"></h2>
+            <div class="map-grid" id="year-grid"></div>
+            <p class="year-empty" id="year-empty" hidden>No runs recorded in this year yet.</p>
         </div>
         <div class="city-group">
             <h2 class="city-group-header">Aci Sant'Antonio, Catania, Italy 🇮🇹</h2>
@@ -670,28 +675,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filterBtns = document.querySelectorAll('.filter-btn');
     const filterStatus = document.getElementById('filter-status');
+    const majorsSection = document.querySelector('.marathon-majors-section');
+    const mapSection = document.getElementById('world-map-section');
+    const yearView = document.getElementById('year-view');
+    const yearViewTitle = document.getElementById('year-view-title');
+    const yearGrid = document.getElementById('year-grid');
+    const yearEmpty = document.getElementById('year-empty');
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const selectedYear = btn.getAttribute('data-filter');
+            const yearMode = selectedYear !== 'All';
 
-            let visibleRouteCount = 0;
-            routeImages.forEach(img => {
-                const visible = selectedYear === 'All' || img.dataset.year === selectedYear;
-                img.hidden = !visible;
-                if (visible) visibleRouteCount += 1;
-            });
+            majorsSection.hidden = yearMode;
+            mapSection.hidden = yearMode;
+            yearView.hidden = !yearMode;
+            cityGroups.forEach(group => { group.hidden = yearMode; });
+            document.body.classList.toggle('year-filtered', yearMode);
 
-            cityGroups.forEach(group => {
-                const visibleImages = group.querySelectorAll('.map-grid img:not([hidden])');
-                const link = document.querySelector(`.sidebar a[href="#${group.id}"]`);
-                group.hidden = visibleImages.length === 0;
-                if(link) link.hidden = visibleImages.length === 0;
-            });
-            filterStatus.textContent = selectedYear === 'All'
-                ? `Showing all ${visibleRouteCount} mapped routes`
-                : `Showing ${visibleRouteCount} mapped routes from ${selectedYear}`;
+            if (!yearMode) {
+                filterStatus.textContent = `Showing all ${routeImages.length} mapped routes`;
+                return;
+            }
+
+            const matches = [...routeImages]
+                .filter(img => img.dataset.year === selectedYear)
+                .sort((a, b) => (b.dataset.date || '').localeCompare(a.dataset.date || ''));
+            yearViewTitle.textContent = `${selectedYear} · ${matches.length} run${matches.length === 1 ? '' : 's'}`;
+            yearGrid.replaceChildren(...matches.map(img => img.cloneNode()));
+            yearEmpty.hidden = matches.length > 0;
+            filterStatus.textContent = `Showing ${matches.length} mapped routes from ${selectedYear}`;
+            yearView.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
@@ -739,19 +755,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape' && sidebar.classList.contains('open')) setDrawer(false);
     });
 
-    // 5. Lightbox
+    // 5. Lightbox (delegated so cloned tiles in the year view work too)
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.querySelector('.lightbox-close');
 
-    document.querySelectorAll('.map-grid img').forEach(img => {
-        img.addEventListener('click', function() {
-            lightbox.style.display = "block";
-            lightboxImg.src = this.src;
-            let filename = decodeURIComponent(this.src.split('/').pop().replace(/\.[^/.]+$/, ""));
-            lightboxCaption.textContent = this.dataset.date ? `${this.dataset.date} · ${filename}` : filename;
-        });
+    document.addEventListener('click', (e) => {
+        const img = e.target.closest('.map-grid img');
+        if (!img) return;
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+        let filename = decodeURIComponent(img.src.split('/').pop().replace(/\.[^/.]+$/, ""));
+        lightboxCaption.textContent = img.dataset.date ? `${img.dataset.date} · ${filename}` : filename;
     });
 
     lightboxClose.addEventListener('click', () => {
