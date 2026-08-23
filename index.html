@@ -566,29 +566,48 @@
             </div>
         </div>
         <div class="stats-section">
-            <div class="overall-stats">
-                <h2>STATISTICS</h2>
-                <p>Total Runs: <span class="counter" data-target="345" data-decimals="0">0</span></p>
-                <p>Total Distance: <span class="counter" data-target="2487.35" data-decimals="2">0.00</span> km</p>
-                <p>Average Distance: <span class="counter" data-target="7.21" data-decimals="2">0.00</span> km</p>
-                <p>Max Distance: <span class="counter" data-target="42.43" data-decimals="2">0.00</span> km</p>
-                <p>Total Elevation Gain: <span class="counter" data-target="16383.2" data-decimals="1">0.0</span> m</p>
+            <div class="stats-panel overall-stats">
+                <h2>Statistics</h2>
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <span class="stat-value"><span class="counter" data-target="345" data-decimals="0">0</span></span>
+                        <span class="stat-label">Total Runs</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value"><span class="counter" data-target="2487.35" data-decimals="2">0.00</span><span class="stat-unit">km</span></span>
+                        <span class="stat-label">Total Distance</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value"><span class="counter" data-target="7.21" data-decimals="2">0.00</span><span class="stat-unit">km</span></span>
+                        <span class="stat-label">Average Distance</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value"><span class="counter" data-target="42.43" data-decimals="2">0.00</span><span class="stat-unit">km</span></span>
+                        <span class="stat-label">Max Distance</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value"><span class="counter" data-target="16383.2" data-decimals="1">0.0</span><span class="stat-unit">m</span></span>
+                        <span class="stat-label">Total Elevation Gain</span>
+                    </div>
+                </div>
             </div>
-            <div class="best-efforts">
-                <h2>BEST EFFORTS</h2>
-                <p>1 mile: 6:42</p>
-                <p>5K: 22:30</p>
-                <p>10K: 46:13</p>
-                <p>15K: 1:13:23</p>
-                <p>Half-Marathon: 1:43:43</p>
-                <p>Marathon: 4:35:57</p>
+            <div class="stats-panel best-efforts">
+                <h2>Best Efforts</h2>
+                <ul class="effort-list">
+                    <li><span class="effort-distance">1 mile</span><span class="effort-time">6:42</span></li>
+                    <li><span class="effort-distance">5K</span><span class="effort-time">22:30</span></li>
+                    <li><span class="effort-distance">10K</span><span class="effort-time">46:13</span></li>
+                    <li><span class="effort-distance">15K</span><span class="effort-time">1:13:23</span></li>
+                    <li><span class="effort-distance">Half-Marathon</span><span class="effort-time">1:43:43</span></li>
+                    <li><span class="effort-distance">Marathon</span><span class="effort-time">4:35:57</span></li>
+                </ul>
             </div>
         </div>
         <footer>
             <p class="footer-title">Yongkang's Running Journey as of July 30, 2026</p>
             <div class="footer-links">
-                <a href="https://www.strava.com/athletes/yongkang-yang" target="_blank" style="color: #FC4C02; text-decoration: none; margin-right: 15px;">Strava</a>
-                <a href="https://github.com/yongkang-yang/running-journey" target="_blank" style="color: white; text-decoration: none;">GitHub</a>
+                <a href="https://www.strava.com/athletes/yongkang-yang" target="_blank">Strava</a>
+                <a href="https://github.com/yongkang-yang/running-journey" target="_blank">GitHub</a>
             </div>
         </footer>
     </div>
