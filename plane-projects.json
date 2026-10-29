@@ -1,0 +1,12 @@
+{
+  "workspace": "yongkang",
+  "web_url": "https://app.plane.so/yongkang",
+  "projects": [
+    {
+      "id": "e0f81045-3bc1-4771-b018-bc6f5ec9d63e",
+      "identifier": "RUN",
+      "name": "Running Journey",
+      "url": "https://app.plane.so/yongkang/projects/e0f81045-3bc1-4771-b018-bc6f5ec9d63e/work-items/"
+    }
+  ]
+}
